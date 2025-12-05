@@ -1,228 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0EDE26G0K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Yang</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  gtag('config', 'G-S0EDE26G0K');
-</script>
-<title>ShanYang</title>
-<meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="styles/style.css" />
-<!--[if IE 6]>
-<script src="js/ie6-transparency.js"></script>
-<script>DD_belatedPNG.fix('#wrap .line, #header #header-photo');</script>
-<link rel="stylesheet" href="styles/ie6.css" />
-<![endif]-->
-<!--[if IE 7]><link rel="stylesheet" href="styles/ie7.css" /><![endif]-->
-<!--[if IE 8]><link rel="stylesheet" href="styles/ie8.css" /><![endif]-->
-<!--[if IE 9]><link rel="stylesheet" href="styles/ie9.css" /><![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0EDE26G0K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S0EDE26G0K');
+    </script>
 </head>
 <body>
-<div id="wrap">
-  <div id="header">
-    <div id="header-photo"> <img src="images/shan_v2.jpeg" alt="" /> </div>
-    <!--end header-photo-->
-    <div id="header-content">
-      <h1>Shan Yang</h1>
-      <h2>Tech Lead Amazon AI Studio|Ex-Tech Lead LLM for Amazon Product Search|Ex-Tech Lead Amazon Video Search, Amazon/A9 | Xoogler </h2>
-	      <p>I currently drive the Amazon AI Studio initiative while continuing to advance multi-modal LLMs and video generation research. Previously I led Amazon Video Search and the LLM reranker for Amazon Product Search, and my broader interests span multi-modality perception, 3D computer vision, and physically based simulation.</p>
-	      <p>Before Amazon, I was a Senior Research SDE at Google Research focusing on multi-modal content creation and 3D vision. I completed my PhD at UNC-CH under Prof. <a href="http://cs.unc.edu/~lin">Ming C. Lin</a>.</p>
-      <div id="contact-details">
-        <p class="contact"><span>Email: </span>alexyangshan at gmail dot com</p>
-        <p class="contact"><span></span><a href="docs/shanyang_resume.pdf">Resume</a></p>
-      </div>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <img src="images/shan_v2.jpeg" alt="Shan Yang" class="profile-image">
+                <div class="hero-text">
+                    <h1>Shan Yang</h1>
+                    <p class="subtitle">Tech Lead Amazon AI Studio | Ex-Tech Lead LLM for Amazon Product Search | Ex-Tech Lead Amazon Video Search, Amazon/A9 | Xoogler</p>
+                    <p class="bio">I currently drive the Amazon AI Studio initiative while continuing to advance multi-modal LLMs and video generation research. Previously I led Amazon Video Search and the LLM reranker for Amazon Product Search, and my broader interests span multi-modality perception, 3D computer vision, and physically based simulation.</p>
+                    <p class="bio">Before Amazon, I was a Senior Research SDE at Google Research focusing on multi-modal content creation and 3D vision. I completed my PhD at UNC-CH under Prof. <a href="http://cs.unc.edu/~lin">Ming C. Lin</a>.</p>
+                    <div class="contact">
+                        <a href="mailto:alexyangshan@gmail.com" class="contact-link">alexyangshan@gmail.com</a>
+                        <a href="docs/shanyang_resume.pdf" class="btn-resume">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="publications">
+            <h2>Publications</h2>
+            <div class="publications-grid">
+            <article class="publication">
+                <img src="images/vlap_image.png" alt="VLAP" class="pub-image">
+                <div class="pub-content">
+                    <h3>VLAP: Efficient Video-Language Alignment via Frame Prompting and Distilling for Video Question Answering</h3>
+                    <p class="authors">Xijun Wang, Junbang Liang, Chun-Kai Wang, Kenan Deng, Yu Lou, Ming Lin, <strong>Shan Yang</strong></p>
+                    <p class="venue">ECCV 2024</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2312.08367">arXiv</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/icar_image.png" alt="ICAR" class="pub-image">
+                <div class="pub-content">
+                    <h3>ICAR: Image-based Complementary Auto Reasoning</h3>
+                    <p class="authors">Xijun Wang, Anqi Liang, Junbang Liang, Ming Lin, Yu Lou, <strong>Shan Yang</strong></p>
+                    <p class="venue">AAAI 2024</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2308.09119">arXiv</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/mesa_image.png" alt="MeSa" class="pub-image">
+                <div class="pub-content">
+                    <h3>MeSa: Masked, Geometric, and Supervised Pre-training for Monocular Depth Estimation</h3>
+                    <p class="authors">Muhammad Osama Khan, Junbang Liang, Chun-Kai Wang, <strong>Shan Yang</strong>, Yu Lou</p>
+                    <p class="venue">NIPS 2023 Workshop SSLTheoryPractice</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2310.04551">arXiv</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/rosi_image.png" alt="RoSI" class="pub-image">
+                <div class="pub-content">
+                    <h3>RoSI: Recovering 3D Shape Interiors from Few Articulation Images</h3>
+                    <p class="authors">Akshay Gadi Patil, Yiming Qian, <strong>Shan Yang</strong>, Brian Jackson, Eric Bennett, Hao Zhang</p>
+                    <p class="venue">In submission</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2304.06342">arXiv</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/mbt_image.png" alt="MBT" class="pub-image">
+                <div class="pub-content">
+                    <h3>Attention Bottlenecks for Multimodal Fusion</h3>
+                    <p class="authors">Arsha Nagrani, <strong>Shan Yang</strong>, Anurag Arnab, Aren Jansen, Cordelia Schmid, Chen Sun</p>
+                    <p class="venue">NeurIPS 2021</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2107.00135">arXiv</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/OpticalMouse_cvpr.png" alt="Optical Mouse" class="pub-image">
+                <div class="pub-content">
+                    <h3>Optical Mouse: 3D Mouse Pose From Single-View Video</h3>
+                    <p class="authors"><strong>Shan Yang*</strong>, Bo Hu*, David A. Ross, Avneesh Sud, Yi Liu, Graham Ruby, Bryan Seybold</p>
+                    <p class="venue">CVPR 2021 (CV4Animal Workshop)</p>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/choreo_gen.png" alt="AI Choreographer" class="pub-image">
+                <div class="pub-content">
+                    <h3>AI Choreographer: Music Conditioned 3D Dance Generation with AIST++</h3>
+                    <p class="authors"><strong>Shan Yang*</strong>, Ruilong Li*, David A. Ross, Angjoo Kanazawa</p>
+                    <p class="venue">ICCV 2021</p>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2101.08779">arXiv</a>
+                        <a href="https://google.github.io/aichoreographer/">Project</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/ICCV_2017.png" alt="Cloth Material Recovery" class="pub-image">
+                <div class="pub-content">
+                    <h3>Learning-based Cloth Material Recovery from Video</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Junbang Liang, Ming C. Lin</p>
+                    <p class="venue">ICCV 2017</p>
+                    <div class="links">
+                        <a href="http://cs.unc.edu/~alexyang/docs/ICCV2017.pdf">Paper</a>
+                        <a href="videos/iccv_demo.mp4">Video</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/TOG_2016.png" alt="Garment Recovery" class="pub-image">
+                <div class="pub-content">
+                    <h3>Physics-Inspired Garment Recovery from a Single-View Image</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Zherong Pan, Tanya Amert, Ke Wang, Licheng Yu, Tamara Berg, Ming C. Lin</p>
+                    <p class="venue">ACM TOG 2018</p>
+                    <div class="links">
+                        <a href="http://arxiv.org/abs/1608.01250">Paper</a>
+                        <a href="videos/SIGASIA2016_demo_v2_540_1mq.mp4">Video</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/ECCV_2016.jpg" alt="Referring Expressions" class="pub-image">
+                <div class="pub-content">
+                    <h3>Modeling Context in Referring Expressions</h3>
+                    <p class="authors">Licheng Yu, Patric Poirson, <strong>Shan Yang</strong>, Alex Berg, Tamara Berg</p>
+                    <p class="venue">ECCV 2016</p>
+                    <div class="links">
+                        <a href="http://arxiv.org/abs/1608.00272">Paper</a>
+                        <a href="http://github.com/lichengunc/refer">Dataset</a>
+                        <a href="http://tamaraberg.com/referitgame/">Project</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/MICCAI_2016.png" alt="Prostate Cancer Classification" class="pub-image">
+                <div class="pub-content">
+                    <h3>Classification of Prostate Cancer Grades and T-Stages based on Tissue Elasticity Using Medical Image Analysis</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Vladimir Jojic, Jun Lian, Ronald Chen, Hongtu Zhu, Ming C. Lin</p>
+                    <p class="venue">MICCAI 2016</p>
+                    <div class="links">
+                        <a href="http://cs.unc.edu/~alexyang/docs/miccai2016.pdf">Paper</a>
+                        <a href="http://gamma.cs.unc.edu/CancerClass/">Project</a>
+                        <a href="http://cs.unc.edu/~alexyang/docs/MICCAI2016_supp.pdf">Supplementary</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/ICRA_2016.png" alt="Bayesian Estimation" class="pub-image">
+                <div class="pub-content">
+                    <h3>Bayesian Estimation of Non-Rigid Mechanical Parameters Using Temporal Sequences of Deformation Samples</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Ming C. Lin</p>
+                    <p class="venue">ICRA 2016</p>
+                    <div class="links">
+                        <a href="http://cs.unc.edu/~alexyang/videos/ICRA2016_demo_highquality.mp4">Video</a>
+                        <a href="http://cs.unc.edu/~alexyang/docs/ICRA2016.pdf">Paper</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/tvcg_2014.png" alt="MaterialCloning" class="pub-image">
+                <div class="pub-content">
+                    <h3>MaterialCloning: Acquiring Elasticity Parameters from Images for Medical Applications</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Ming C. Lin</p>
+                    <p class="venue">IEEE TVCG 2016</p>
+                    <div class="links">
+                        <a href="http://gamma.cs.unc.edu/ElasticParamMultiRegion/">Project</a>
+                        <a href="http://cs.unc.edu/~alexyang/docs/TVCG2016.pdf">Paper</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/CASA_2015.png" alt="Simultaneous Estimation" class="pub-image">
+                <div class="pub-content">
+                    <h3>Simultaneous Estimation of Elasticity for Multiple Deformable Bodies</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Ming C. Lin</p>
+                    <p class="venue">Computer Animation and Virtual Worlds, 2015</p>
+                    <div class="links">
+                        <a href="http://gamma.cs.unc.edu/ElasticParamMultiBody/">Project</a>
+                        <a href="http://gamma.cs.unc.edu/ElasticParamMultiBody/ElasticParamMultiBody.pdf">Paper</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="publication">
+                <img src="images/CARS_2012.jpg" alt="Buried Suture" class="pub-image">
+                <div class="pub-content">
+                    <h3>Real-time simulation for buried suture</h3>
+                    <p class="authors"><strong>Shan Yang</strong>, Wenlong Lu, Lixu Gu</p>
+                    <p class="venue">CARS 2012</p>
+                </div>
+            </article>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <a href="https://github.com/google-research/mint">Multimodal Content Creation Training Infrastructure (MINT)</a>
+                    <p>Supporting multimodal dance generation</p>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/google/aistplusplus_api">AIST++ Dataset API</a>
+                    <p>Developer tools and loaders for the AIST++ dataset</p>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/shanyang-me/diffusion-from-scratch">Diffusion from Scratch</a>
+                    <p>Educational implementation of diffusion models</p>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/shanyang-me/CocoCut">CocoCut App</a>
+                    <p>Interactive creation and editing app</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Shan Yang</p>
+        </footer>
     </div>
-    <!--end header-content-->
-    
-  </div>
-  <!--end header-->
-  <div class="line"></div>
-    <div id="content">
-      <div id="public-projects">
-        <h3>Public Projects</h3>
-        <ul>
-          <li><a href="https://github.com/google-research/mint">Multimodal Content Creation Training Infrastructure (MINT)</a> &mdash; supporting multimodal dance generation.</li>
-          <li><a href="https://github.com/google/aistplusplus_api">AIST++ Dataset API</a> &mdash; developer tools and loaders for the AIST++ dataset.</li>
-          <li><a href="https://github.com/shanyang-me/diffusion-from-scratch">Diffusion from Scratch</a> &mdash; educational implementation of diffusion models.</li>
-          <li><a href="https://github.com/shanyang-me/CocoCut">CocoCut App</a> &mdash; interactive creation and editing app.</li>
-        </ul>
-      </div>
-      <h3>Publications</h3>
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/vlap_image.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title">VLAP: Efficient Video-Language Alignment via Frame Prompting and Distilling
-					for Video Question Answering</h4>
-                <h4 class="authors">Xijun Wang, Junbang Liang, Chun-Kai Wang, Kenan Deng, Yu Lou, Ming Lin,<b>Shan Yang</b></h4>
-			<p>ECCV 2024(accepted)</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2312.08367">arXiv</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/icar_image.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title">ICAR: Image-based Complementary Auto Reasoning</h4>
-                <h4 class="authors">Xijun Wang, Anqi Liang, Junbang Liang, Ming Lin, Yu Lou, <b>Shan Yang</b></h4>
-			<p>AAAI 2024(accepted)</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2308.09119">arXiv</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/mesa_image.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title">MeSa: Masked, Geometric, and Supervised Pre-training for Monocular Depth Estimation</h4>
-				
-                <h4 class="authors">Muhammad Osama Khan, Junbang Liang, Chun-Kai Wang, <b>Shan Yang</b>, Yu Lou</h4>
-			<p>NIPS 2023 Workshop SSLTheoryPractice(accepted)</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2310.04551">arXiv</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/rosi_image.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title">RoSI: Recovering 3D Shape Interiors from Few Articulation Images</h4>
-                <h4 class="authors">Akshay Gadi Patil, Yiming Qian, <b>Shan Yang</b>, Brian Jackson, Eric Bennett, Hao Zhang</h4>
-			<p>In submission</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2304.06342">arXiv</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/mbt_image.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Attention Bottlenecks for Multimodal Fusion</h4>
-                <h4 class="authors">Arsha Nagrani, <b>Shan Yang</b>, Anurag Arnab, Aren Jansen, Cordelia Schmid, Chen Sun </h4>
-			<p>NIPS 2021(accepted)</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2107.00135">arXiv</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/OpticalMouse_cvpr.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Optical Mouse: 3D Mouse Pose From Single-View Video</h4>
-                <h4 class="authors"><b>Shan Yang*</b>, Bo Hu*, David A. Ross, Avneesh Sud, Yi Liu, Graham Ruby, Bryan Seybold </h4>
-			<p>Conference on Computer Vision and Pattern Recognition, CVPR 2021(CV4Animal Workshop)</p>
-            <h4 class="links"></h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/choreo_gen.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> AI Choreographer: Music Conditioned 3D Dance Generation with AIST++</h4>
-                <h4 class="authors"><b>Shan Yang*</b>, Ruilong Li*, David A. Ross, Angjoo Kanazawa</h4>
-			<p>International Conference on Computer Vision, ICCV 2021(accepted)</p>
-            <h4 class="links">[<a href="https://arxiv.org/abs/2101.08779">arXiv</a>][<a href="https://google.github.io/aichoreographer/">project</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-    <div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/ICCV_2017.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Learning-based Cloth Material Recovery from Video</h4>
-                <h4 class="authors"><b>Shan Yang</b>, Junbang Liang, Ming C. Lin</h4>
-			<p>International Conference on Computer Vision, ICCV 2017(accepted)</p>
-            <h4 class="links">[<a href="http://cs.unc.edu/~alexyang/docs/ICCV2017.pdf">paper</a>][<a href="videos/iccv_demo.mp4">video</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-    <div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/TOG_2016.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Physics-Inspired Garment Recovery from a Single-View Image</h4>
-                <h4 class="authors"><b>Shan Yang</b>, Zherong Pan, Tanya Amert, Ke Wang, Licheng Yu, Tamara Berg, Ming C. Lin</h4>
-			<p>ACM Transaction on Graphics, TOG 2018(accepted)</p>
-            <h4 class="links">[<a href="http://arxiv.org/abs/1608.01250">paper</a>][<a href="videos/SIGASIA2016_demo_v2_540_1mq.mp4">video</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-    <div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/ECCV_2016.jpg" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Modeling Context in Referring Expressions</h4>
-                <h4 class="authors">Licheng Yu, Patric Poirson, <b>Shan Yang</b>, Alex Berg, Tamara Berg</h4>
-			<p>European Conference on Computer Vision, ECCV 2016 </p>
-            <h4 class="links">[<a href="http://arxiv.org/abs/1608.00272">paper</a>][<a href="http://github.com/lichengunc/refer">dataset</a>][<a href="http://tamaraberg.com/referitgame/">project</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-	<div id="cv-section-item">
-        <div id="cv-section-item-image"> <img src="images/MICCAI_2016.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-                <h4 class="title"> Classification of Prostate Cancer Grades and T-Stages based on Tissue Elasticity Using Medical Image Analysis</h4>
-                <h4 class="authors"><b>Shan Yang</b>, Vladimir Jojic, Jun Lian, Ronald Chen, Hongtu Zhu and Ming C. Lin</h4>
-			<p>International Conference on Medical Image Computing and Computer Assisted Intervention, MICCAI 2016</p>
-            <h4 class="links">[<a href="http://cs.unc.edu/~alexyang/docs/miccai2016.pdf">paper</a>][<a href="http://gamma.cs.unc.edu/CancerClass/">project</a>][<a href="http://cs.unc.edu/~alexyang/docs/MICCAI2016_supp.pdf">supplementary document</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-
-	<div id="cv-section-item">
-		<div id="cv-section-item-image"> <img src="images/ICRA_2016.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-			<h4 class="title">Bayesian Estimation of Non-Rigid Mechanical Parameters Using Temporal Sequences of Deformation Samples</h4>
-            <h4 class="authors"><b>Shan Yang</b>, Ming C. Lin</h4>
-			<p>IEEE International Conference on Robotics and Automation, ICRA 2016</p>
-            <h4 class="links">[<a href="http://cs.unc.edu/~alexyang/videos/ICRA2016_demo_highquality.mp4">video</a>][<a href="http://cs.unc.edu/~alexyang/docs/ICRA2016.pdf">paper</a>][project (coming soon)]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-
-	<div id="cv-section-item">
-		<div id="cv-section-item-image"> <img src="images/tvcg_2014.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-			<h4 class="title">MaterialCloning: Acquiring Elasticity Parameters from Images for Medical Applications</h4>
-            <h4 class="authors"><b>Shan Yang</b>, Ming C. Lin</h4>
-			<p>Visualization and Computer Graphics, IEEE Transactions, TVCG 2016</p>
-            <h4 class="links">[<a href="http://gamma.cs.unc.edu/ElasticParamMultiRegion/">project</a>][<a href="http://cs.unc.edu/~alexyang/docs/TVCG2016.pdf">paper</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-      	<!--end cv-section-item-->
-	<div id="cv-section-item">
-		<div id="cv-section-item-image"> <img src="images/CASA_2015.png" alt="" /> </div>
-    		<div id="cv-section-item-content">
-			<h4 class="title">Simultaneous Estimation of Elasticity for Multiple Deformable Bodies</h4>
-            <h4 class="authors"><b>Shan Yang</b>, Ming C. Lin</h4>
-			<p>Computer Animation and Virtual Worlds 26.3-4 (2015): 197-206.</p>
-            <h4 class="links">[<a href="http://gamma.cs.unc.edu/ElasticParamMultiBody/">project</a>][<a href="http://gamma.cs.unc.edu/ElasticParamMultiBody/ElasticParamMultiBody.pdf">paper</a>]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-      	<!--end cv-section-item-->
-	<div id="cv-section-item">
-		<div id="cv-section-item-image"> <img src="images/CARS_2012.jpg" alt="" /> </div>
-    		<div id="cv-section-item-content">
-			<h4 class="title">Real-time simulation for buried suture</h4>
-            <h4 class="authors"><b>Shan Yang</b>, Wenlong Lu, Lixu Gu</h4>
-			<p>Computer Assisted Radiology and Surgery (CARS), 2012</p>
-			<h4 class="links">[paper][video]</h4>
-      		</div>
-      		<!--end cv-section-item-content-->
-    	</div>
-      	<!--end cv-section-item-->
-    <div class="line"></div>
-    
-  </div>
-  <!--end content-->
-</div>
-<div align=center &copy 2016 Shan Yang></div>
-<!--end wrap-->
-<div id="spacing"></div>
-<!--hack for ie6 and ie7-->
 </body>
 </html>
