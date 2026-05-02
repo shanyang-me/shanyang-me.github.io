@@ -1,0 +1,221 @@
+%-------------------------
+% Resume in LaTeX (Apple variant — current canonical resume)
+% Source for docs/shanyang_resume.pdf linked from shanyang.me
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Research in Progress entry: bold title + description
+\newcommand{\resumeRIP}[2]{
+  \item\small{
+    \textbf{#1}: #2
+    \vspace{-2pt}
+  }
+}
+
+% Publication entry: bold title, italic authors, venue, italic blurb
+\newcommand{\resumePubFull}[4]{
+  \item\small{
+    \textbf{#1} \\
+    \textit{#2} \\
+    #3 \\
+    \textit{#4}
+    \vspace{2pt}
+  }
+}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Shan Yang} \\ \vspace{4pt}
+    \small Staff Applied Scientist --- Foundation Models, Multimodal AI, Generative AI \\
+    \vspace{4pt}
+    \href{mailto:alexyangshan@gmail.com}{\underline{alexyangshan@gmail.com}} $|$
+    \href{https://shanyang.me}{\underline{shanyang.me}} $|$
+    \href{https://scholar.google.com}{\underline{Google Scholar}}
+\end{center}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+  \resumeItemListStart
+    \resumeItem{Technical leader with 8+ years driving foundation model research and production ML systems at scale across multimodal generative AI, video/image generation, and LLM post-training}
+    \resumeItem{Proven track record managing Applied Scientists and establishing technical roadmaps, shipping products serving millions with \$500M+ revenue impact}
+    \resumeItem{Deep expertise in multimodal foundation models: 3,500+ citations at premier venues (NeurIPS, ICCV, ECCV, ICML, AAAI), pioneering novel architectures in attention-based fusion, music-conditioned motion synthesis, and autoregressive diffusion}
+  \resumeItemListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{ML Frameworks:} PyTorch, TensorFlow, Scikit-learn --- Distributed training (DeepSpeed, FSDP)}
+    \resumeSubItem{\textbf{Foundation Models:} Diffusion Models, Multimodal LLMs, Transformers, CLIP, BLIP}
+    \resumeSubItem{\textbf{Research Focus:} Novel Model Architectures, Image/Video/3D Generation \& Editing, Multimodal Understanding, Post-Training (RLHF), Test-Time Training, Reinforcement Learning}
+    \resumeSubItem{\textbf{Architecture Innovation:} Attention Bottlenecks, Multimodal Fusion, Music-Conditioned Motion Synthesis, Autoregressive Diffusion, Linear Recurrent Models}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Engineering \& Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Adobe Foundry}{San Jose, CA}
+      {Staff Applied Scientist}{March 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Driving post-training research for Adobe Foundry, Adobe's family of generative AI foundation models powering Firefly and creative tooling at scale}
+        \resumeItem{Developing post-training techniques (SFT, RLHF/DPO, LoRA, distillation, test-time training) to align foundation models with creator intent and production quality bars}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon Prime Video}{Sunnyvale, CA}
+      {Senior Applied Scientist Tech Lead}{June 2025 -- March 2026}
+      \resumeItemListStart
+        \resumeItem{Led GenAI Live Action Studio with \textbf{5 Applied Scientists}, building autoregressive diffusion architectures and training infrastructure for 10B+ parameter video generation models}
+        \resumeItem{Advanced controllable generation via novel post-training techniques (Test-Time Training, Teacher-Diffusion-Forcing, RL), translating director and creative-team requirements into production-ready architectures}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon Search}{Palo Alto, CA}
+      {Senior Applied Scientist Tech Lead}{September 2021 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{Led \textbf{Amazon Video Search} from zero to launch serving millions with \textbf{\$500M+ annual revenue gain}, managing \textbf{3 Applied Scientists and 2 MLEs} and influencing a 15-person SDE team; owned multi-year roadmap, multimodal ranker design, and production ML systems}
+        \resumeItem{Pioneered multimodal fusion architecture integrating video, text, image, and structured data, enabling multi-modal search at scale}
+        \resumeItem{Drove multimodal LLM robustness research: Schema-of-Thought framework achieving \textbf{+28\% hallucination reduction}; published at ECCV, AAAI and filed multiple patents}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Google Research}{Mountain View, CA}
+      {Senior Research Software Engineer}{June 2017 -- September 2021}
+      \resumeItemListStart
+        \resumeItem{Led foundational research in multimodal generative models, influencing \textbf{3 Research Engineers}, driving research agenda in music-conditioned 3D motion synthesis and video-audio-motion modeling, publishing at premier ML conferences (ICCV, NeurIPS, ECCV)}
+        \resumeItem{Drove technical ownership of 2D/3D pose reconstruction models deployed on GCP at scale, demonstrating ability to lead end-to-end ML product development from research to production}
+        \resumeItem{Provided technical leadership through patent contributions, cross-functional collaboration, and mentorship of research interns on advanced ML projects}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH IN PROGRESS-----------
+\section{Research in Progress}
+  \resumeSubHeadingListStart
+    \resumeRIP{Schema-of-Thought}{Prompting framework for multimodal LLM robustness and out-of-distribution generalization (+28\% Claude 3.5, +13.3\% GPT-4o)}
+    \resumeRIP{Teacher Diffusion Forcing}{Novel training paradigm merging teacher forcing with diffusion forcing for autoregressive diffusion, modeling error as conditional distribution}
+    \resumeRIP{ClipDreamer}{Subject-driven video generation using test-time training to inject long video clip information for improved subject fidelity}
+  \resumeSubHeadingListEnd
+
+%-----------SELECTED PUBLICATIONS-----------
+\section{Selected Publications}
+  \resumeSubHeadingListStart
+    \resumePubFull
+      {Beyond Test-Time Training: Learning to Reason via Hardware-Efficient Optimal Control}
+      {P Wang, \textbf{S Yang}, X Wang, T Xiao, X Liu, C Yu, Y Lou, P Li, Z Wang, MC Lin, R Vidal}
+      {ICML 2026}
+      {Linear recurrent architecture leveraging optimal control theory for LLM test-time reasoning (+35.8\% Math-500, +10\% AIME25).}
+
+    \resumePubFull
+      {ViLA: Efficient Video-Language Alignment for Video Question Answering}
+      {X Wang, J Liang, CK Wang, K Deng, Y Lou, MC Lin, \textbf{S Yang}}
+      {ECCV 2024}
+      {Efficient vision-language multimodal foundation models.}
+
+    \resumePubFull
+      {ICAR: Image-based Complementary Auto Reasoning}
+      {X Wang, A Liang, J Liang, M Lin, Y Lou, \textbf{S Yang}}
+      {AAAI 2024}
+      {Multimodal reasoning for visual understanding tasks.}
+
+    \resumePubFull
+      {Attention Bottlenecks for Multimodal Fusion}
+      {A Nagrani, \textbf{S Yang}, A Arnab, A Jansen, C Schmid, C Sun}
+      {NeurIPS 2021 --- \textbf{800+ citations}}
+      {Multimodal fusion architecture for foundation models.}
+
+    \resumePubFull
+      {AI Choreographer: Music Conditioned 3D Dance Generation with AIST++}
+      {R Li*, \textbf{S Yang}*, DA Ross, A Kanazawa}
+      {ICCV 2021 --- \textbf{700+ citations}}
+      {Multimodal generative modeling: music, motion, vision.}
+
+    \resumePubFull
+      {Physics-Inspired Garment Recovery from a Single-View Image}
+      {\textbf{S Yang}, Z Pan, T Amert, K Wang, L Yu, T Berg, MC Lin}
+      {ACM ToG 2018 --- \textbf{100+ citations}}
+      {3D generation from images.}
+
+    \resumePubFull
+      {Modeling Context in Referring Expressions}
+      {L Yu, P Poirson, \textbf{S Yang}, A Berg, T Berg}
+      {ECCV 2016 --- \textbf{1600+ citations}}
+      {Vision-language understanding.}
+  \resumeSubHeadingListEnd
+
+%-----------PATENTS-----------
+\section{Patents \& Intellectual Property}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{VLAP: Efficient Video-Language Alignment via Frame Prompting and Temporal Distilling} (2023)}
+    \resumeSubItem{\textbf{Monitoring Animal Pose Dynamics from Monocular Images} (2022)}
+    \resumeSubItem{\textbf{Image-based Complementary Item Recommendation Algorithm} (2022)}
+    \resumeSubItem{\textbf{Auto Design: ML-based Furniture Layout Recommendation Algorithm} (2022)}
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of North Carolina at Chapel Hill}{Chapel Hill, NC}
+      {Ph.D., Computer Science}{2012 -- 2017}
+    \resumeSubheading
+      {Shanghai Jiao Tong University}{Shanghai, China}
+      {B.E., Software Engineering}{2008 -- 2012}
+  \resumeSubHeadingListEnd
+
+\end{document}
