@@ -90,66 +90,29 @@
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Shan Yang} \\ \vspace{4pt}
-    \small Staff Applied Scientist --- Foundation Models, Multimodal AI, Generative AI \\
+    \small Research Scientist --- Multimodal RL \& Reasoning Post-Training \\
     \vspace{4pt}
     \href{mailto:alexyangshan@gmail.com}{\underline{alexyangshan@gmail.com}} $|$
     \href{https://shanyang.me}{\underline{shanyang.me}} $|$
-    \href{https://scholar.google.com}{\underline{Google Scholar}}
+    \href{https://scholar.google.com/citations?user=WLk8ZikAAAAJ}{\underline{Scholar}} $|$
+    \href{https://github.com/shanyang-me}{\underline{GitHub}} $|$
+    \href{https://huggingface.co/shanyangmie}{\underline{Hugging Face}}
 \end{center}
 
 %-----------PROFESSIONAL SUMMARY-----------
 \section{Professional Summary}
   \resumeItemListStart
-    \resumeItem{Technical leader with 8+ years driving foundation model research and production ML systems at scale across multimodal generative AI, video/image generation, and LLM post-training}
-    \resumeItem{Proven track record managing Applied Scientists and establishing technical roadmaps, shipping products serving millions with \$500M+ revenue impact}
-    \resumeItem{Deep expertise in multimodal foundation models: 3,500+ citations at premier venues (NeurIPS, ICCV, ECCV, ICML, AAAI), pioneering novel architectures in attention-based fusion, music-conditioned motion synthesis, and autoregressive diffusion}
+    \resumeItem{Research scientist focused on \textbf{multimodal RL post-training} and visual-language reasoning, with 8+ years across foundation models at Adobe, Amazon, and Google Research}
+    \resumeItem{\textbf{Sole-author arXiv 2026} on RL post-training for visual reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on the held-out olympiad benchmark over Qwen3-VL-8B base); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500)}
+    \resumeItem{Independent open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus), \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior first-author NeurIPS / ICCV with \textbf{1{,}500+} combined citations}
   \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
   \resumeSubHeadingListStart
-    \resumeSubItem{\textbf{ML Frameworks:} PyTorch, TensorFlow, Scikit-learn --- Distributed training (DeepSpeed, FSDP)}
-    \resumeSubItem{\textbf{Foundation Models:} Diffusion Models, Multimodal LLMs, Transformers, CLIP, BLIP}
-    \resumeSubItem{\textbf{Research Focus:} Novel Model Architectures, Image/Video/3D Generation \& Editing, Multimodal Understanding, Post-Training (RLHF), Test-Time Training, Reinforcement Learning}
-    \resumeSubItem{\textbf{Architecture Innovation:} Attention Bottlenecks, Multimodal Fusion, Music-Conditioned Motion Synthesis, Autoregressive Diffusion, Linear Recurrent Models}
-  \resumeSubHeadingListEnd
-
-%-----------EXPERIENCE-----------
-\section{Engineering \& Research Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Adobe Foundry}{San Jose, CA}
-      {Staff Applied Scientist}{March 2026 -- Present}
-      \resumeItemListStart
-        \resumeItem{Driving post-training research for Adobe Foundry, Adobe's family of generative AI foundation models powering Firefly and creative tooling at scale}
-        \resumeItem{Developing post-training techniques (SFT, RLHF/DPO, LoRA, distillation, test-time training) to align foundation models with creator intent and production quality bars}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
-      {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
-      \resumeItemListStart
-        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio with \textbf{5 Applied Scientists}, building autoregressive diffusion architectures and training infrastructure for 10B+ parameter video generation models; advanced controllable generation via novel post-training (Test-Time Training, Teacher-Diffusion-Forcing, RL)}
-        \resumeItem{\textbf{Search (2021--2025):} Led \textbf{Amazon Video Search} from zero to launch serving millions with \textbf{\$500M+ annual revenue gain}, managing \textbf{3 Applied Scientists and 2 MLEs} and influencing a 15-person SDE team; pioneered multimodal fusion architecture integrating video, text, image, and structured data}
-        \resumeItem{Drove multimodal LLM robustness research: Schema-of-Thought framework achieving \textbf{+28\% hallucination reduction}; published at ECCV, AAAI and filed multiple patents}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Google Research}{Mountain View, CA}
-      {Senior Research Software Engineer}{June 2017 -- September 2021}
-      \resumeItemListStart
-        \resumeItem{Led foundational research in multimodal generative models, influencing \textbf{3 Research Engineers}, driving research agenda in music-conditioned 3D motion synthesis and video-audio-motion modeling, publishing at premier ML conferences (ICCV, NeurIPS, ECCV)}
-        \resumeItem{Drove technical ownership of 2D/3D pose reconstruction models deployed on GCP at scale, demonstrating ability to lead end-to-end ML product development from research to production}
-        \resumeItem{Provided technical leadership through patent contributions, cross-functional collaboration, and mentorship of research interns on advanced ML projects}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
-%-----------RESEARCH IN PROGRESS-----------
-\section{Research in Progress}
-  \resumeSubHeadingListStart
-    \resumeRIP{Multimodal Reasoning RL}{Reinforcement-learning post-training of vision-language reasoning models; physics olympiad benchmark and reference recipe published as Physics-R1 (arXiv 2026).}
+    \resumeSubItem{\textbf{RL post-training:} GRPO, GSPO, DAPO, DPO, RLHF, verl, MM-Eureka, reward shaping, LLM-as-judge protocols, audit-aware curricula}
+    \resumeSubItem{\textbf{Multimodal foundation models:} vision-language transformers, autoregressive video / diffusion, test-time training, attention-based fusion}
+    \resumeSubItem{\textbf{Infra:} PyTorch, FSDP / DeepSpeed, vLLM, distributed training at 10B+ params, HuggingFace, Croissant 1.0 + RAI dataset packaging}
   \resumeSubHeadingListEnd
 
 %-----------SELECTED PUBLICATIONS-----------
@@ -158,8 +121,8 @@
     \resumePubFull
       {Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning}
       {\textbf{S Yang}}
-      {arXiv 2026 \,(\href{https://arxiv.org/abs/2605.14040}{2605.14040})}
-      {Sole-author preprint. Three-stage corpus audit (Jaccard $\to$ embedding $\to$ LLM-judge), novel-source held-out olympiad benchmark (PhysOlym-A, 500q), and GSPO+DAPO recipe lifting Qwen3-VL-8B by $+18.3$\,pp on PhysOlym-A.}
+      {arXiv 2026 \,(\href{https://arxiv.org/abs/2605.14040}{2605.14040}) --- \href{https://shanyang.me/physics-r1-page/}{project} / \href{https://github.com/shanyang-me/physics-r1-code}{code} / \href{https://huggingface.co/shanyangmie}{data}}
+      {Sole-author. Three-stage corpus audit (Jaccard $\to$ mxbai $\to$ Haiku-4.5 judge), $500$-problem novel-source held-out olympiad benchmark, and GSPO+DAPO recipe trained at $\sim$360 H200-GPU-hours over 3 seeds on Qwen3-VL-8B; $+18.3$\,pp on PhysOlym-A, $+15.7$\,pp on PhysReason. Method follow-up in preparation.}
 
     \resumePubFull
       {Beyond Test-Time Training: Learning to Reason via Hardware-Efficient Optimal Control}
@@ -170,7 +133,7 @@
     \resumePubFull
       {Schema Perception for Robust Video Question Answering}
       {X Wang, \textbf{S Yang}}
-      {Internal 2025}
+      {Tech Report 2025}
       {Schema-of-Thought prompting framework for multimodal LLM robustness and OOD generalization (+28\% Claude 3.5, +13.3\% GPT-4o).}
 
     \resumePubBrief
@@ -202,6 +165,44 @@
       {Modeling Context in Referring Expressions}
       {L Yu, P Poirson, \textbf{S Yang}, A Berg, T Berg}
       {ECCV 2016 --- \textbf{1600+ citations}}
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH IN PROGRESS-----------
+\section{Research in Progress}
+  \resumeSubHeadingListStart
+    \resumeRIP{Reasoning-Method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method: judge-robust correctness signals + audit-aware curricula extending the GSPO+DAPO recipe; in preparation.}
+    \resumeRIP{Multimodal Reasoning RL agenda}{Reinforcement-learning post-training of vision-language reasoning models with public benchmarks and open-source releases; Physics-R1 (arXiv 2026) is the first artifact in this line of work.}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Engineering \& Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Adobe Foundry}{San Jose, CA}
+      {Staff Applied Scientist}{March 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Post-training research for Adobe Foundry, Adobe's family of generative AI foundation models powering Firefly and creative tooling at scale}
+        \resumeItem{Developing post-training techniques (SFT, RLHF/DPO, LoRA, distillation, test-time training) to align foundation models with creator intent and production quality bars}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
+      {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio (\textbf{5 Applied Scientists}), building autoregressive diffusion architectures and training infrastructure for \textbf{10B+ parameter} video generation models; advanced controllable generation via test-time training, teacher-diffusion-forcing, and RL post-training}
+        \resumeItem{\textbf{Search (2021--2025):} Led \textbf{Amazon Video Search} from zero to launch with \textbf{\$500M+ annual revenue gain} (3 Applied Scientists, 2 MLEs, 15-person SDE team); pioneered multimodal fusion architecture across video, text, image, and structured data}
+        \resumeItem{Drove multimodal LLM robustness research: Schema-of-Thought framework, \textbf{+28\% hallucination reduction}; published at ECCV, AAAI; filed multiple patents}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Google Research}{Mountain View, CA}
+      {Senior Research Software Engineer}{June 2017 -- September 2021}
+      \resumeItemListStart
+        \resumeItem{Led foundational research in multimodal generative models with \textbf{3 Research Engineers}; drove agenda on music-conditioned 3D motion synthesis and video-audio-motion modeling; first/co-first author publications at ICCV, NeurIPS, ECCV}
+        \resumeItem{Owned 2D/3D pose reconstruction models deployed on GCP at scale; led end-to-end research-to-production}
+      \resumeItemListEnd
+
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
