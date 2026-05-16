@@ -104,7 +104,7 @@
   \resumeItemListStart
     \resumeItem{Research scientist focused on \textbf{multimodal RL post-training} and visual-language reasoning, with 8+ years across foundation models at Adobe, Amazon, and Google Research}
     \resumeItem{\textbf{Sole-author arXiv 2026} on RL post-training for visual reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on the held-out olympiad benchmark over Qwen3-VL-8B base); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500)}
-    \resumeItem{Open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus) and \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior first/co-first author at NeurIPS (Attention Bottlenecks) and ICCV (AI Choreographer)}
+    \resumeItem{Open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus) and \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior co-first author at ICCV (AI Choreographer, \textbf{700+} citations) and second author at NeurIPS (Attention Bottlenecks, \textbf{800+} citations)}
   \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
@@ -164,7 +164,7 @@
 %-----------RESEARCH IN PROGRESS-----------
 \section{Research in Progress}
   \resumeSubHeadingListStart
-    \resumeRIP{Reasoning-method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method extending the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; targeting ICLR 2027.}
+    \resumeRIP{Reasoning-method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method extending the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; in preparation, submission Q3 2026.}
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -175,7 +175,8 @@
       {Adobe Foundry}{San Jose, CA}
       {Staff Applied Scientist}{March 2026 -- Present}
       \resumeItemListStart
-        \resumeItem{Post-training research for Adobe Foundry's generative AI foundation models powering Firefly (SFT, RLHF/DPO, LoRA, distillation, test-time training)}
+        \resumeItem{Post-training research for Adobe Foundry's generative AI foundation models powering Firefly: SFT, RLHF / DPO, LoRA, distillation, test-time training}
+        \resumeItem{Owning evaluation protocols and preference-data pipelines for the post-training stack; close collaboration with the foundation-model training team on creator-aligned image / video generation}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -183,17 +184,26 @@
       {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
       \resumeItemListStart
         \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} video generation; advanced controllable generation via test-time training, teacher-diffusion-forcing, and RL post-training}
-        \resumeItem{\textbf{Search (2021--2025):} Pioneered multimodal fusion architecture (video / text / image / structured) for Amazon Video Search, deployed at scale; co-authored ViLA (ECCV 2024) and ICAR (AAAI 2024); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
+        \resumeItem{\textbf{Search (2021--2025):} Pioneered multimodal fusion architecture (video / text / image / structured) for Amazon Video Search, deployed at scale; tech-led ViLA (ECCV 2024, last author) and ICAR (AAAI 2024, last author); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
       \resumeItemListEnd
 
     \resumeSubheading
       {Google Research}{Mountain View, CA}
       {Senior Research Software Engineer}{June 2017 -- September 2021}
       \resumeItemListStart
-        \resumeItem{First/co-first author publications at ICCV (AI Choreographer + AIST++ dataset), NeurIPS (Attention Bottlenecks), and ECCV; drove research agenda on music-conditioned 3D motion synthesis and multimodal generative modeling}
+        \resumeItem{Co-first author at ICCV (AI Choreographer + AIST++ dataset, \textbf{700+} citations) and second author at NeurIPS (Attention Bottlenecks, \textbf{800+} citations); drove research agenda on music-conditioned 3D motion synthesis and multimodal generative modeling}
         \resumeItem{Owned 2D/3D pose reconstruction models deployed on GCP at scale}
       \resumeItemListEnd
 
+  \resumeSubHeadingListEnd
+
+%-----------OPEN-SOURCE ARTIFACTS-----------
+\section{Open-source Artifacts}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{\textsc{PhysCorp-A}} --- 6.4K-record three-stage-audited multimodal physics corpus \,(\href{https://huggingface.co/datasets/shanyangmie/physcorp-a}{HF})}
+    \resumeSubItem{\textbf{\textsc{PhysOlym-A}} --- 500-problem held-out olympiad benchmark, 99.8\% novel-source, EN/ET bilingual subset \,(\href{https://huggingface.co/datasets/shanyangmie/physolym-a}{HF})}
+    \resumeSubItem{\textbf{Physics-R1 code} --- audit pipeline + GSPO+DAPO RL recipe + Sonnet-as-judge eval harness \,(\href{https://github.com/shanyang-me/physics-r1-code}{GitHub})}
+    \resumeSubItem{\textbf{AIST++} --- 1{,}408-clip motion-music dataset for 3D dance generation \,(\href{https://github.com/google/aistplusplus_api}{GitHub}, Google / ICCV 2021)}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
