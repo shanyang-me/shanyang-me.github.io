@@ -104,7 +104,7 @@
   \resumeItemListStart
     \resumeItem{Research scientist focused on \textbf{multimodal RL post-training} and visual-language reasoning, with 8+ years across foundation models at Adobe, Amazon, and Google Research}
     \resumeItem{\textbf{Sole-author arXiv 2026} on RL post-training for visual reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on the held-out olympiad benchmark over Qwen3-VL-8B base); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500)}
-    \resumeItem{Independent open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus), \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior first-author NeurIPS / ICCV with \textbf{1{,}500+} combined citations}
+    \resumeItem{Open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus) and \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior first/co-first author at NeurIPS (Attention Bottlenecks) and ICCV (AI Choreographer)}
   \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
@@ -129,12 +129,6 @@
       {P Wang, \textbf{S Yang}, X Wang, T Xiao, X Liu, C Yu, Y Lou, P Li, Z Wang, MC Lin, R Vidal}
       {ICML 2026}
       {Linear recurrent architecture leveraging optimal control theory for LLM test-time reasoning (+35.8\% Math-500, +10\% AIME25).}
-
-    \resumePubFull
-      {Schema Perception for Robust Video Question Answering}
-      {X Wang, \textbf{S Yang}}
-      {Tech Report 2025}
-      {Schema-of-Thought prompting framework for multimodal LLM robustness and OOD generalization (+28\% Claude 3.5, +13.3\% GPT-4o).}
 
     \resumePubBrief
       {ViLA: Efficient Video-Language Alignment for Video Question Answering}
@@ -170,8 +164,7 @@
 %-----------RESEARCH IN PROGRESS-----------
 \section{Research in Progress}
   \resumeSubHeadingListStart
-    \resumeRIP{Reasoning-Method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method: judge-robust correctness signals + audit-aware curricula extending the GSPO+DAPO recipe; in preparation.}
-    \resumeRIP{Multimodal Reasoning RL agenda}{Reinforcement-learning post-training of vision-language reasoning models with public benchmarks and open-source releases; Physics-R1 (arXiv 2026) is the first artifact in this line of work.}
+    \resumeRIP{Reasoning-method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method extending the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; targeting ICLR 2027.}
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -182,25 +175,23 @@
       {Adobe Foundry}{San Jose, CA}
       {Staff Applied Scientist}{March 2026 -- Present}
       \resumeItemListStart
-        \resumeItem{Post-training research for Adobe Foundry, Adobe's family of generative AI foundation models powering Firefly and creative tooling at scale}
-        \resumeItem{Developing post-training techniques (SFT, RLHF/DPO, LoRA, distillation, test-time training) to align foundation models with creator intent and production quality bars}
+        \resumeItem{Post-training research for Adobe Foundry's generative AI foundation models powering Firefly (SFT, RLHF/DPO, LoRA, distillation, test-time training)}
       \resumeItemListEnd
 
     \resumeSubheading
       {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
       {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
       \resumeItemListStart
-        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio (\textbf{5 Applied Scientists}), building autoregressive diffusion architectures and training infrastructure for \textbf{10B+ parameter} video generation models; advanced controllable generation via test-time training, teacher-diffusion-forcing, and RL post-training}
-        \resumeItem{\textbf{Search (2021--2025):} Led \textbf{Amazon Video Search} from zero to launch with \textbf{\$500M+ annual revenue gain} (3 Applied Scientists, 2 MLEs, 15-person SDE team); pioneered multimodal fusion architecture across video, text, image, and structured data}
-        \resumeItem{Drove multimodal LLM robustness research: Schema-of-Thought framework, \textbf{+28\% hallucination reduction}; published at ECCV, AAAI; filed multiple patents}
+        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} video generation; advanced controllable generation via test-time training, teacher-diffusion-forcing, and RL post-training}
+        \resumeItem{\textbf{Search (2021--2025):} Pioneered multimodal fusion architecture (video / text / image / structured) for Amazon Video Search, deployed at scale; co-authored ViLA (ECCV 2024) and ICAR (AAAI 2024); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
       \resumeItemListEnd
 
     \resumeSubheading
       {Google Research}{Mountain View, CA}
       {Senior Research Software Engineer}{June 2017 -- September 2021}
       \resumeItemListStart
-        \resumeItem{Led foundational research in multimodal generative models with \textbf{3 Research Engineers}; drove agenda on music-conditioned 3D motion synthesis and video-audio-motion modeling; first/co-first author publications at ICCV, NeurIPS, ECCV}
-        \resumeItem{Owned 2D/3D pose reconstruction models deployed on GCP at scale; led end-to-end research-to-production}
+        \resumeItem{First/co-first author publications at ICCV (AI Choreographer + AIST++ dataset), NeurIPS (Attention Bottlenecks), and ECCV; drove research agenda on music-conditioned 3D motion synthesis and multimodal generative modeling}
+        \resumeItem{Owned 2D/3D pose reconstruction models deployed on GCP at scale}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
