@@ -75,6 +75,16 @@
   }
 }
 
+% Compact publication entry: title + authors + venue only (no blurb)
+\newcommand{\resumePubBrief}[3]{
+  \item\small{
+    \textbf{#1} \\
+    \textit{#2} \\
+    #3
+    \vspace{2pt}
+  }
+}
+
 \begin{document}
 
 %----------HEADING----------
@@ -163,50 +173,35 @@
       {Internal 2025}
       {Schema-of-Thought prompting framework for multimodal LLM robustness and OOD generalization (+28\% Claude 3.5, +13.3\% GPT-4o).}
 
-    \resumePubFull
+    \resumePubBrief
       {ViLA: Efficient Video-Language Alignment for Video Question Answering}
       {X Wang, J Liang, CK Wang, K Deng, Y Lou, MC Lin, \textbf{S Yang}}
       {ECCV 2024}
-      {Efficient vision-language multimodal foundation models.}
 
-    \resumePubFull
+    \resumePubBrief
       {ICAR: Image-based Complementary Auto Reasoning}
       {X Wang, A Liang, J Liang, M Lin, Y Lou, \textbf{S Yang}}
       {AAAI 2024}
-      {Multimodal reasoning for visual understanding tasks.}
 
-    \resumePubFull
+    \resumePubBrief
       {Attention Bottlenecks for Multimodal Fusion}
       {A Nagrani, \textbf{S Yang}, A Arnab, A Jansen, C Schmid, C Sun}
       {NeurIPS 2021 --- \textbf{800+ citations}}
-      {Multimodal fusion architecture for foundation models.}
 
-    \resumePubFull
+    \resumePubBrief
       {AI Choreographer: Music Conditioned 3D Dance Generation with AIST++}
       {R Li*, \textbf{S Yang}*, DA Ross, A Kanazawa}
       {ICCV 2021 --- \textbf{700+ citations}}
-      {Multimodal generative modeling: music, motion, vision.}
 
-    \resumePubFull
+    \resumePubBrief
       {Physics-Inspired Garment Recovery from a Single-View Image}
       {\textbf{S Yang}, Z Pan, T Amert, K Wang, L Yu, T Berg, MC Lin}
       {ACM ToG 2018 --- \textbf{100+ citations}}
-      {3D generation from images.}
 
-    \resumePubFull
+    \resumePubBrief
       {Modeling Context in Referring Expressions}
       {L Yu, P Poirson, \textbf{S Yang}, A Berg, T Berg}
       {ECCV 2016 --- \textbf{1600+ citations}}
-      {Vision-language understanding.}
-  \resumeSubHeadingListEnd
-
-%-----------PATENTS-----------
-\section{Patents \& Intellectual Property}
-  \resumeSubHeadingListStart
-    \resumeSubItem{\textbf{VLAP: Efficient Video-Language Alignment via Frame Prompting and Temporal Distilling} (2023)}
-    \resumeSubItem{\textbf{Monitoring Animal Pose Dynamics from Monocular Images} (2022)}
-    \resumeSubItem{\textbf{Image-based Complementary Item Recommendation Algorithm} (2022)}
-    \resumeSubItem{\textbf{Auto Design: ML-based Furniture Layout Recommendation Algorithm} (2022)}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
