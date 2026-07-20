@@ -1,6 +1,6 @@
 %-------------------------
-% Resume in LaTeX (Apple variant — current canonical resume)
-% Source for docs/shanyang_resume.pdf linked from shanyang.me
+% Resume in LaTeX — OpenAI variant (tailored for Research Engineer / Research Scientist, Post-Training)
+% Derived from the canonical docs/shanyang_resume.tex
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -90,7 +90,7 @@
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Shan Yang} \\ \vspace{4pt}
-    \small Research Scientist --- Multimodal RL \& Reasoning Post-Training \\
+    \small Research Engineer / Research Scientist --- RL Post-Training, Reasoning \& Agentic Tool-Use \\
     \vspace{4pt}
     \href{mailto:alexyangshan@gmail.com}{\underline{alexyangshan@gmail.com}} $|$
     \href{https://shanyang.me}{\underline{shanyang.me}} $|$
@@ -102,15 +102,16 @@
 %-----------PROFESSIONAL SUMMARY-----------
 \section{Professional Summary}
   \resumeItemListStart
-    \resumeItem{Research scientist focused on \textbf{multimodal RL post-training} and visual-language reasoning, with 8+ years across foundation models at Adobe, Amazon, and Google Research}
-    \resumeItem{\textbf{Sole-author arXiv 2026} on RL post-training for visual reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on the held-out olympiad benchmark over Qwen3-VL-8B base); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500)}
+    \resumeItem{Research scientist/engineer in \textbf{RL post-training for reasoning and alignment} (RLHF, GRPO/GSPO/DAPO, DPO), with 8+ years shipping foundation models to production at \textbf{product scale} across Adobe, Amazon, and Google Research}
+    \resumeItem{\textbf{Sole-author arXiv 2026} on an RL post-training recipe for reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on a held-out olympiad benchmark over Qwen3-VL-8B base, with judge-robust reward design and audit-aware curricula); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500, \textbf{+10\%} AIME25)}
     \resumeItem{Open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus) and \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior co-first author at ICCV (AI Choreographer, \textbf{700+} citations) and second author at NeurIPS (Attention Bottlenecks, \textbf{800+} citations)}
   \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
   \resumeSubHeadingListStart
-    \resumeSubItem{\textbf{RL post-training:} GRPO, GSPO, DAPO, DPO, RLHF, verl, MM-Eureka, reward shaping, LLM-as-judge protocols, audit-aware curricula}
+    \resumeSubItem{\textbf{RL post-training:} GRPO, GSPO, DAPO, DPO, RLHF, verl, MM-Eureka, reward modeling \& shaping, preference-data pipelines, LLM-as-judge \& eval/benchmark design, audit-aware curricula}
+    \resumeSubItem{\textbf{Agentic tool-use:} multi-turn tool-calling RL, in-rollout tool harnesses (stop-token interception, sandboxed execution, \texttt{<tool\_result>} feedback), reward shaping over tool invocation, vLLM serving}
     \resumeSubItem{\textbf{Multimodal foundation models:} vision-language transformers, autoregressive video / diffusion, test-time training, attention-based fusion}
     \resumeSubItem{\textbf{Infra:} PyTorch, FSDP / DeepSpeed, vLLM, distributed training at 10B+ params, HuggingFace, Croissant 1.0 + RAI dataset packaging}
   \resumeSubHeadingListEnd
@@ -131,7 +132,7 @@
       {Linear recurrent architecture leveraging optimal control theory for LLM test-time reasoning (+35.8\% Math-500, +10\% AIME25).}
 
     \resumePubBrief
-      {ViLA: Efficient Video-Language Alignment for Video Question Answering}
+      {VLAP: Efficient Video-Language Alignment via Frame Prompting and Distilling for Video Question Answering}
       {X Wang, J Liang, CK Wang, K Deng, Y Lou, MC Lin, \textbf{S Yang}}
       {ECCV 2024}
 
@@ -164,7 +165,7 @@
 %-----------RESEARCH IN PROGRESS-----------
 \section{Research in Progress}
   \resumeSubHeadingListStart
-    \resumeRIP{Reasoning-method paper (Physics-R1 follow-up)}{Novel multimodal RL post-training method extending the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; in preparation, submission Q3 2026.}
+    \resumeRIP{Tool-augmented RL post-training (Physics-R1 follow-up)}{Multi-turn \textbf{tool-use RL}: a sandboxed tool harness the policy invokes mid-rollout (vLLM stop-token interception $\to$ sandboxed execution $\to$ \texttt{<tool\_result>} $\to$ resume generation), with reward shaping over \emph{when and how} the tool is called --- the symbolic analogue of the ReTool / ARTIST text tool-RL loops. Extends the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; in preparation, submission Q3 2026.}
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -175,16 +176,16 @@
       {Adobe Foundry}{San Jose, CA}
       {Staff Applied Scientist}{March 2026 -- Present}
       \resumeItemListStart
-        \resumeItem{Post-training research for Adobe Foundry's generative AI foundation models powering Firefly: SFT, RLHF / DPO, LoRA, distillation, test-time training}
-        \resumeItem{Owning evaluation protocols and preference-data pipelines for the post-training stack; close collaboration with the foundation-model training team on creator-aligned image / video generation}
+        \resumeItem{Build \textbf{custom generative foundation models for enterprise customers} on Adobe Foundry --- post-training (SFT, RLHF / DPO) where \textbf{training-data quality and curation (``data taste'')} is the primary lever for adapting Firefly base models to each customer's brand, content, and style at \textbf{product quality}}
+        \resumeItem{Own the \textbf{data curation, evaluation protocols, graders, and preference-data pipelines} that gate customer-model quality; turn customer / creator signal and failure cases into clean training data and concrete model-behavior improvements}
       \resumeItemListEnd
 
     \resumeSubheading
       {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
       {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
       \resumeItemListStart
-        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} video generation; advanced controllable generation via test-time training, teacher-diffusion-forcing, and RL post-training}
-        \resumeItem{\textbf{Search (2021--2025):} Pioneered multimodal fusion architecture (video / text / image / structured) for Amazon Video Search, deployed at scale; tech-led ViLA (ECCV 2024, last author) and ICAR (AAAI 2024, last author); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
+        \resumeItem{\textbf{Search (2021--2025):} Built and shipped Amazon's large-scale multimodal video search (video / text / image / structured fusion), deployed to customers, and applied \textbf{RL post-training} to the search models; tech-led VLAP (ECCV 2024, last author) and ICAR (AAAI 2024, last author); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
+        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} video generation; advanced controllable generation via test-time training and teacher-diffusion-forcing}
       \resumeItemListEnd
 
     \resumeSubheading
