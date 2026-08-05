@@ -634,3 +634,131 @@ footer {
         font-size: 13px;
     }
 }
+
+/* ==========================================================
+   Additions: post-training systems, experience
+   ========================================================== */
+
+/* Post-Training Systems */
+.systems {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 40px 60px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.systems h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.systems-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.systems-item {
+    padding: 20px 24px;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.systems-tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.systems-item p {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+/* Experience */
+.experience {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 40px 60px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.experience h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.experience-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.experience-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.experience-head h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.experience-years {
+    font-size: 14px;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.experience-item p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+/* Earlier-work framing line inside the collapsed publication list */
+.earlier-note {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 4px 0 28px;
+    padding-left: 16px;
+    border-left: 3px solid var(--border-color);
+    max-width: 80ch;
+}
+
+.earlier-note strong {
+    color: var(--text-dark);
+}
+
+@media (max-width: 992px) {
+    .systems-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .systems,
+    .experience {
+        padding: 30px 24px;
+    }
+
+    .experience-head {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
