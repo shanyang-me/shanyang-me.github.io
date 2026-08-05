@@ -636,21 +636,8 @@ footer {
 }
 
 /* ==========================================================
-   Additions: post-training systems, experience, TODO markers
+   Additions: post-training systems, experience
    ========================================================== */
-
-/* Unfilled placeholders. Highly visible on purpose — you should
-   not be able to ship the page without noticing them. Delete this
-   rule (and the spans) once every value is filled in. */
-.todo {
-    background: #fef08a;
-    color: #713f12;
-    padding: 0 4px;
-    border-radius: 3px;
-    font-weight: 500;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-}
 
 /* Post-Training Systems */
 .systems {
@@ -678,10 +665,6 @@ footer {
     background: var(--bg-light);
     border-radius: 8px;
     border: 1px solid var(--border-color);
-}
-
-.systems-item-wide {
-    grid-column: 1 / -1;
 }
 
 .systems-tag {

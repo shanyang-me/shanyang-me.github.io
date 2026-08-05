@@ -56,12 +56,7 @@
             </div>
         </section>
 
-        <!-- ==========================================================
-             POST-TRAINING SYSTEMS — the "engineer" half of "research
-             engineer". The failure-modes block at the end is the one
-             interviewers will probe. Make it specific enough to be
-             questioned.
-             ========================================================== -->
+        <!-- POST-TRAINING SYSTEMS — the "engineer" half of "research engineer". -->
         <section class="systems">
             <h2>Post-Training Systems</h2>
             <div class="systems-grid">
@@ -79,11 +74,6 @@
                 <div class="systems-item">
                     <div class="systems-tag">Reward &amp; eval infrastructure</div>
                     <p>Rule-based verifier on boxed answers, composed with an LLM judge and unit-consistency checks, each component logged separately so it's visible which term is actually driving the gradient. Three-stage contamination audit — lexical, embedding, then judge — gates every training corpus.</p>
-                </div>
-
-                <div class="systems-item systems-item-wide">
-                    <div class="systems-tag">Failure modes I've debugged</div>
-                    <p><span class="todo">[[Pick the ones you actually diagnosed, with the number and the fix: SFT overfitting / catastrophic forgetting. Entropy collapse at step N — diagnosed by X, fixed with Y. Length hacking: mean response grew from A to B tokens with no accuracy gain — fixed with Z. KL blowup on W. Judge gaming.]]</span></p>
                 </div>
 
             </div>
