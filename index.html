@@ -26,7 +26,7 @@
                 <div class="hero-text">
                     <h1>Shan Yang</h1>
                     <p class="subtitle">RL Post-Training · Agentic Reasoning · Reward Design</p>
-                    <p class="bio">I build the post-training stack end to end — verifiable-reward environments, rollout infrastructure, and RL recipes that survive contact with the real distribution. On <strong>Physics-R1</strong> that meant taking Qwen2.5-VL-7B from <span class="todo">[[31.2]]</span> to <span class="todo">[[44.8]]</span> on a held-out olympiad benchmark, past <span class="todo">[[GPT-4o at 41.3]]</span>, trained on <span class="todo">[[64 × H100]]</span> with <span class="todo">[[N]]</span> rollouts/sec. I'm now doing the same for multi-turn reasoning, where the reward is harder to specify and much easier to hack.</p>
+                    <p class="bio">I build the post-training stack end to end — verifiable-reward environments, rollout infrastructure, and RL recipes that survive contact with the real distribution. On <strong>Physics-R1</strong> that meant taking Qwen3-VL-8B-Thinking from 8.0 to 26.3 on a held-out olympiad benchmark — +18.3 points, and +15.7 on PhysReason — in roughly 360 H200-GPU-hours across three seeds. I'm now doing the same for multi-turn reasoning, where the reward is harder to specify and much easier to hack.</p>
                     <div class="contact">
                         <a href="mailto:alexyangshan@gmail.com" class="contact-link">alexyangshan@gmail.com</a>
                         <a href="https://scholar.google.com/citations?user=WLk8ZikAAAAJ" class="contact-link">Google Scholar</a>
@@ -44,7 +44,7 @@
                 <img src="images/physics_r1_image.png" alt="Physics-R1" class="latest-image">
                 <div class="latest-text">
                     <h2>Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning</h2>
-                    <p>Most physics benchmarks are contaminated: <span class="todo">[[X]]</span>% of items in <span class="todo">[[existing benchmark]]</span> were recoverable verbatim from <span class="todo">[[source]]</span>, which is why we built ours from scratch. Physics-R1 is 2,434 training records with full provenance and license audit, PhysOlym-A (500 novel-source olympiad questions, <span class="todo">[[drawn from material published after the base model's cutoff]]</span>), and a GRPO recipe worth <span class="todo">[[+13.6 pts]]</span> on PhysOlym-A at 7B — <span class="todo">[[above GPT-4o]]</span>. Corpus, benchmark, training and reward code all open.</p>
+                    <p>Multimodal physics benchmarks are contaminated in ways nobody had measured: a three-stage audit — 5-gram Jaccard, then embedding similarity, then an LLM judge — surfaced 134 near-duplicates and 4,846 paraphrase candidates in SciInstruct alone, alongside translation drift and MCQ saturation. Which is why we built ours from scratch. PhysCorp-A is 6,432 records audited down from a 14,294-record pool, with full provenance and license audit; PhysOlym-A is 500 held-out olympiad problems, 99.8% novel-source. The GSPO+DAPO recipe is worth +18.3 points on PhysOlym-A and +15.7 on PhysReason at 8B. Corpus, benchmark, training and reward code all open.</p>
                     <div class="links">
                         <a href="https://arxiv.org/abs/2605.14040">arXiv</a>
                         <a href="https://shanyang.me/physics-r1-page/">project page</a>
@@ -68,22 +68,17 @@
 
                 <div class="systems-item">
                     <div class="systems-tag">Algorithms</div>
-                    <p>SFT through preference optimization and RL. <span class="todo">[[Which of SFT / DPO / GRPO / DAPO / GSPO / PPO you actually ran head-to-head, and one sentence on why you settled where you did.]]</span></p>
+                    <p>SFT, DPO, RLHF, GRPO, GSPO, DAPO. Physics-R1 settled on GSPO+DAPO at 8B; the multi-turn follow-up runs decoupled advantages over a two-turn episode.</p>
                 </div>
 
                 <div class="systems-item">
                     <div class="systems-tag">Stack</div>
-                    <p><span class="todo">[[verl / OpenRLHF / TRL / custom]]</span> on <span class="todo">[[N × H100, FSDP or Megatron-style sharding]]</span>, vLLM <span class="todo">[[version]]</span> for rollout serving with <span class="todo">[[async / colocated]]</span> generation.</p>
-                </div>
-
-                <div class="systems-item">
-                    <div class="systems-tag">Throughput</div>
-                    <p><span class="todo">[[X]]</span> rollouts/sec at <span class="todo">[[Y]]</span>-token generations. Generation dropped from <span class="todo">[[A]]</span>% to <span class="todo">[[B]]</span>% of wall-clock after <span class="todo">[[the specific fix — continuous batching, prefix caching, weight-sync interval, length bucketing]]</span>.</p>
+                    <p>verl 0.6.1 on FSDP, vLLM for rollout serving, PyTorch and DeepSpeed underneath. Physics-R1 trained in roughly 360 H200-GPU-hours over three seeds; prior production work at 10B+ parameters.</p>
                 </div>
 
                 <div class="systems-item">
                     <div class="systems-tag">Reward &amp; eval infrastructure</div>
-                    <p><span class="todo">[[Rule-based verifier + LLM judge]]</span>. Judge agreement with human labels: <span class="todo">[[%]]</span> over <span class="todo">[[n]]</span> samples. Verifier serving at <span class="todo">[[latency]]</span> under <span class="todo">[[QPS]]</span>.</p>
+                    <p>Rule-based verifier on boxed answers, composed with an LLM judge and unit-consistency checks, each component logged separately so it's visible which term is actually driving the gradient. Three-stage contamination audit — lexical, embedding, then judge — gates every training corpus.</p>
                 </div>
 
                 <div class="systems-item systems-item-wide">
@@ -117,23 +112,23 @@
                 <div class="experience-item">
                     <div class="experience-head">
                         <h3>Adobe Foundry — Staff Applied Scientist</h3>
-                        <span class="experience-years todo">[[2024–now]]</span>
+                        <span class="experience-years">2026–now</span>
                     </div>
-                    <p>Post-training custom generative foundation models for enterprise customers — supervised fine-tuning, with data curation as the primary lever. <span class="todo">[[Shipped N models to M customers; data curation lifted &lt;metric&gt; by X%.]]</span></p>
+                    <p>Post-training custom generative foundation models for enterprise customers — supervised fine-tuning, with data curation as the primary lever. Own the evaluation protocols, graders, and preference-data pipelines that gate customer-model quality.</p>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-head">
-                        <h3>Amazon — Tech Lead, Video Search &amp; GenAI Live Action Studio</h3>
-                        <span class="experience-years todo">[[years]]</span>
+                        <h3>Amazon — Senior Applied Scientist, Tech Lead</h3>
+                        <span class="experience-years">2021–2026</span>
                     </div>
-                    <p>Built multi-modal video search from the ground up, leading a team of <span class="todo">[[N]]</span>, then post-trained LLMs for search. In production. <span class="todo">[[Scale: N queries/day; +X% on &lt;metric&gt;.]]</span></p>
+                    <p>Built and shipped Amazon's large-scale multimodal video search from the ground up — video, text, image and structured fusion — then applied RL post-training to the search models. Led Schema-of-Thought research on multimodal LLM robustness, cutting hallucination 28%. Later led GenAI Live Action Studio: autoregressive diffusion and training infrastructure for 10B+ parameter video generation.</p>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-head">
-                        <h3>Google DeepMind — Senior Research SDE</h3>
-                        <span class="experience-years todo">[[years]]</span>
+                        <h3>Google DeepMind — Senior Research Software Engineer</h3>
+                        <span class="experience-years">2017–2021</span>
                     </div>
                     <p>Multimodal modeling. AIST++ / AI Choreographer (ICCV 2021), Attention Bottlenecks for Multimodal Fusion (NeurIPS 2021).</p>
                 </div>
@@ -141,7 +136,7 @@
                 <div class="experience-item">
                     <div class="experience-head">
                         <h3>UNC-Chapel Hill — PhD, Computer Science</h3>
-                        <span class="experience-years todo">[[year]]</span>
+                        <span class="experience-years">2012–2017</span>
                     </div>
                     <p>Learning physical parameters from video, with Prof. Ming C. Lin.</p>
                 </div>
