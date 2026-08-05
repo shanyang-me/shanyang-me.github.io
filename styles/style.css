@@ -636,7 +636,7 @@ footer {
 }
 
 /* ==========================================================
-   Additions: results, RL systems, experience, TODO markers
+   Additions: post-training systems, experience, TODO markers
    ========================================================== */
 
 /* Unfilled placeholders. Highly visible on purpose — you should
@@ -652,65 +652,7 @@ footer {
     -webkit-box-decoration-break: clone;
 }
 
-/* Results */
-.results {
-    background: var(--bg-white);
-    border-radius: 12px;
-    padding: 40px 60px;
-    margin-bottom: 40px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.results h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 24px;
-}
-
-.results-table-wrap {
-    overflow-x: auto;
-}
-
-.results-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 15px;
-}
-
-.results-table th {
-    text-align: left;
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-light);
-    padding: 0 20px 10px 0;
-    border-bottom: 1px solid var(--border-color);
-    white-space: nowrap;
-}
-
-.results-table td {
-    padding: 14px 20px 14px 0;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: baseline;
-}
-
-.results-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.results-table .note {
-    color: var(--text-light);
-    font-size: 13px;
-}
-
-.results-note {
-    margin-top: 20px;
-    color: var(--text-light);
-    font-size: 15px;
-}
-
-/* RL Systems */
+/* Post-Training Systems */
 .systems {
     background: var(--bg-white);
     border-radius: 12px;
@@ -827,7 +769,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .results,
     .systems,
     .experience {
         padding: 30px 24px;

@@ -26,8 +26,7 @@
                 <div class="hero-text">
                     <h1>Shan Yang</h1>
                     <p class="subtitle">RL Post-Training · Agentic Reasoning · Reward Design</p>
-                    <p class="bio">I build the post-training stack end to end — verifiable-reward environments, rollout infrastructure, and RL recipes that survive contact with the real distribution. On <strong>Physics-R1</strong> that meant taking Qwen2.5-VL-7B from <span class="todo">[[31.2]]</span> to <span class="todo">[[44.8]]</span> on a held-out olympiad benchmark, past <span class="todo">[[GPT-4o at 41.3]]</span>, trained on <span class="todo">[[64 × H100]]</span> with <span class="todo">[[N]]</span> rollouts/sec. I'm now doing the same for tool-use agents, where the reward is harder to specify and much easier to hack.</p>
-                    <p class="bio">Staff Applied Scientist at <strong>Adobe Foundry</strong> — custom generative foundation models for enterprise customers (SFT → DPO → RL, with data curation as the primary lever). Previously Tech Lead at <strong>Amazon Video Search</strong> (multimodal retrieval + RL post-training, shipped to production) and GenAI Live Action Studio, and Senior Research SDE at <strong>Google Research</strong>. PhD from UNC-Chapel Hill with Prof. <a href="http://cs.unc.edu/~lin">Ming C. Lin</a> on learning physical parameters from video.</p>
+                    <p class="bio">I build the post-training stack end to end — verifiable-reward environments, rollout infrastructure, and RL recipes that survive contact with the real distribution. On <strong>Physics-R1</strong> that meant taking Qwen2.5-VL-7B from <span class="todo">[[31.2]]</span> to <span class="todo">[[44.8]]</span> on a held-out olympiad benchmark, past <span class="todo">[[GPT-4o at 41.3]]</span>, trained on <span class="todo">[[64 × H100]]</span> with <span class="todo">[[N]]</span> rollouts/sec. I'm now doing the same for multi-turn reasoning, where the reward is harder to specify and much easier to hack.</p>
                     <div class="contact">
                         <a href="mailto:alexyangshan@gmail.com" class="contact-link">alexyangshan@gmail.com</a>
                         <a href="https://scholar.google.com/citations?user=WLk8ZikAAAAJ" class="contact-link">Google Scholar</a>
@@ -38,57 +37,6 @@
                 </div>
             </div>
         </header>
-
-        <!-- ==========================================================
-             RESULTS — fill every [[ ]] with a real number before shipping.
-             This table is the highest-value block on the page for a
-             frontier-lab screen. If a row has no honest number, delete
-             the row; do not soften it.
-             ========================================================== -->
-        <section class="results">
-            <h2>Results</h2>
-            <div class="results-table-wrap">
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Benchmark</th>
-                            <th>Base</th>
-                            <th>+ Physics-R1 (GRPO)</th>
-                            <th>Frontier reference</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Qwen2.5-VL-7B</td>
-                            <td>PhysOlym-A <span class="note">(novel-source)</span></td>
-                            <td class="todo">[[ ]]</td>
-                            <td class="todo">[[ ]]</td>
-                            <td class="todo">[[GPT-4o: ]]</td>
-                        </tr>
-                        <tr>
-                            <td>Qwen2.5-VL-7B</td>
-                            <td class="todo">[[MathVista / MMMU-Physics]]</td>
-                            <td class="todo">[[ ]]</td>
-                            <td class="todo">[[ ]]</td>
-                            <td class="todo">[[ ]]</td>
-                        </tr>
-                        <tr>
-                            <td class="todo">[[second base model]]</td>
-                            <td>PhysOlym-A</td>
-                            <td class="todo">[[ ]]</td>
-                            <td class="todo">[[ ]]</td>
-                            <td>—</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Only keep the line below if it is true. Generalization without
-                 retuning is the strongest single claim you can make here.
-                 If it isn't true, replace it with what broke instead — that
-                 is also a strong sentence, and almost nobody writes it. -->
-            <p class="results-note">Gains hold on <span class="todo">[[two benchmarks the reward was not tuned against]]</span>, and the recipe transfers to <span class="todo">[[second base model]]</span> without retuning.</p>
-        </section>
 
         <section class="latest">
             <div class="latest-tag">Latest</div>
@@ -109,17 +57,18 @@
         </section>
 
         <!-- ==========================================================
-             RL SYSTEMS — the "engineer" half of "research engineer".
-             The failure-modes block at the end is the one interviewers
-             will probe. Make it specific enough to be questioned.
+             POST-TRAINING SYSTEMS — the "engineer" half of "research
+             engineer". The failure-modes block at the end is the one
+             interviewers will probe. Make it specific enough to be
+             questioned.
              ========================================================== -->
         <section class="systems">
-            <h2>RL Systems</h2>
+            <h2>Post-Training Systems</h2>
             <div class="systems-grid">
 
                 <div class="systems-item">
                     <div class="systems-tag">Algorithms</div>
-                    <p>GRPO<span class="todo">[[ / DAPO / GSPO / PPO]]</span>. <span class="todo">[[Which variants you actually ran head-to-head, and one sentence on why you settled where you did.]]</span></p>
+                    <p>SFT through preference optimization and RL. <span class="todo">[[Which of SFT / DPO / GRPO / DAPO / GSPO / PPO you actually ran head-to-head, and one sentence on why you settled where you did.]]</span></p>
                 </div>
 
                 <div class="systems-item">
@@ -133,13 +82,13 @@
                 </div>
 
                 <div class="systems-item">
-                    <div class="systems-tag">Reward infrastructure</div>
+                    <div class="systems-tag">Reward &amp; eval infrastructure</div>
                     <p><span class="todo">[[Rule-based verifier + LLM judge]]</span>. Judge agreement with human labels: <span class="todo">[[%]]</span> over <span class="todo">[[n]]</span> samples. Verifier serving at <span class="todo">[[latency]]</span> under <span class="todo">[[QPS]]</span>.</p>
                 </div>
 
                 <div class="systems-item systems-item-wide">
                     <div class="systems-tag">Failure modes I've debugged</div>
-                    <p><span class="todo">[[Entropy collapse at step N — diagnosed by X, fixed with Y. Length hacking: mean response grew from A to B tokens with no accuracy gain — fixed with Z. KL blowup on W.]]</span></p>
+                    <p><span class="todo">[[Pick the ones you actually diagnosed, with the number and the fix: SFT overfitting / catastrophic forgetting. Entropy collapse at step N — diagnosed by X, fixed with Y. Length hacking: mean response grew from A to B tokens with no accuracy gain — fixed with Z. KL blowup on W. Judge gaming.]]</span></p>
                 </div>
 
             </div>
@@ -155,8 +104,8 @@
             <h2>In Progress</h2>
             <div class="project-list">
                 <div class="project-item">
-                    <a href="#">Physics-R2 — tool-use RL and reward hacking</a>
-                    <p>Draft <span class="todo">[[month]]</span>. <span class="todo">[[Replace this entry with a shipped artifact as soon as one exists: a tool-use environment with a programmatic verifier, a reward-hacking eval across 3–5 open post-trained models, or published agentic rollout traces with per-step rewards.]]</span></p>
+                    <a href="#">Physics-R2 — multi-turn reasoning and reward hacking</a>
+                    <p>Draft <span class="todo">[[month]]</span>. <span class="todo">[[Replace this entry with a shipped artifact as soon as one exists: a multi-turn reasoning environment with a programmatic verifier, a reward-hacking eval across 3–5 open post-trained models, or published multi-turn rollout traces with per-step rewards.]]</span></p>
                 </div>
             </div>
         </section>
@@ -170,7 +119,7 @@
                         <h3>Adobe Foundry — Staff Applied Scientist</h3>
                         <span class="experience-years todo">[[2024–now]]</span>
                     </div>
-                    <p>Custom generative foundation models for enterprise customers. <span class="todo">[[Shipped N models to M customers; SFT→DPO→RL pipeline; data curation lifted &lt;metric&gt; by X%.]]</span></p>
+                    <p>Post-training custom generative foundation models for enterprise customers — supervised fine-tuning, with data curation as the primary lever. <span class="todo">[[Shipped N models to M customers; data curation lifted &lt;metric&gt; by X%.]]</span></p>
                 </div>
 
                 <div class="experience-item">
@@ -178,12 +127,12 @@
                         <h3>Amazon — Tech Lead, Video Search &amp; GenAI Live Action Studio</h3>
                         <span class="experience-years todo">[[years]]</span>
                     </div>
-                    <p>Multimodal retrieval and RL post-training, in production. <span class="todo">[[Scale: N queries/day; +X% on &lt;metric&gt;.]]</span></p>
+                    <p>Built multi-modal video search from the ground up, leading a team of <span class="todo">[[N]]</span>, then post-trained LLMs for search. In production. <span class="todo">[[Scale: N queries/day; +X% on &lt;metric&gt;.]]</span></p>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-head">
-                        <h3>Google Research — Senior Research SDE</h3>
+                        <h3>Google DeepMind — Senior Research SDE</h3>
                         <span class="experience-years todo">[[years]]</span>
                     </div>
                     <p>Multimodal modeling. AIST++ / AI Choreographer (ICCV 2021), Attention Bottlenecks for Multimodal Fusion (NeurIPS 2021).</p>
@@ -461,7 +410,7 @@
                 </div>
 
                 <div class="release-item">
-                    <div class="release-tag">Project</div>
+                    <div class="release-tag">Agentic System</div>
                     <a href="/lumi/">Lumi Research Manager</a>
                     <p>Seven specialist agents orchestrated over LangGraph across a staged research pipeline, dispatched in natural language rather than through a fixed DAG. Agents run as Claude CLI subprocesses with MCP tool access, share state through Prisma/SQLite, hold multi-round discussions logged per turn, and sync progress to Notion.</p>
                 </div>
