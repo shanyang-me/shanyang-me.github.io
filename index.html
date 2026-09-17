@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shan Yang</title>
+    <meta name="description" content="Shan Yang — Research Engineer. RL post-training infrastructure for multimodal and agentic models: the training stacks, reward environments, and rollout systems that turn research ideas into trained models.">
+    <meta property="og:title" content="Shan Yang — Research Engineer, RL Post-Training Infrastructure">
+    <meta property="og:description" content="RL post-training infrastructure for multimodal and agentic models: training stacks, reward environments, and rollout systems that turn research ideas into trained models.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shanyang.me/">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +30,8 @@
                 <img src="images/shan_v2.jpeg" alt="Shan Yang" class="profile-image">
                 <div class="hero-text">
                     <h1>Shan Yang</h1>
-                    <p class="subtitle">Post-Training · Multimodal RL Reasoning · Agentic Systems</p>
-                    <p class="bio">I build the post-training stack end to end — verifiable-reward environments, rollout infrastructure, and RL recipes that survive contact with the real distribution. On <strong>Physics-R1</strong> that meant taking Qwen3-VL-8B-Thinking from 8.0 to 26.3 on a held-out olympiad benchmark — +18.3 points, and +15.7 on PhysReason — in roughly 360 H200-GPU-hours across three seeds. I'm now doing the same for multi-turn reasoning, where the reward is harder to specify and much easier to hack.</p>
+                    <p class="subtitle">Research Engineer · RL post-training infrastructure for multimodal and agentic models</p>
+                    <p class="bio">Ten years building ML systems end-to-end — from a production video understanding stack at Google DeepMind to RL post-training pipelines at Amazon and Adobe. Most recently I built the full GSPO+DAPO training stack (verl on FSDP, vLLM rollouts, rule-based and LLM-judge verifiers) that took Qwen3-VL-8B-Thinking from 8.0 to 26.3 on a held-out olympiad benchmark in ~360 H200-GPU-hours across three runs.</p>
                     <div class="contact">
                         <a href="mailto:alexyangshan@gmail.com" class="contact-link">alexyangshan@gmail.com</a>
                         <a href="https://scholar.google.com/citations?user=WLk8ZikAAAAJ" class="contact-link">Google Scholar</a>
@@ -38,13 +43,80 @@
             </div>
         </header>
 
+        <!-- TECHNICAL STACK — the "engineer" half of "research engineer". -->
+        <section class="systems">
+            <h2>Technical Stack</h2>
+            <div class="systems-grid">
+
+                <div class="systems-item">
+                    <div class="systems-tag">Post-training algorithms</div>
+                    <p>SFT, DPO, RLHF, GRPO, GSPO, DAPO. Physics-R1 settled on GSPO+DAPO at 8B; the multi-turn follow-up runs decoupled advantages over a two-turn episode.</p>
+                </div>
+
+                <div class="systems-item">
+                    <div class="systems-tag">Training &amp; rollout infrastructure</div>
+                    <p>verl 0.6.1 on FSDP; vLLM for rollout serving; PyTorch, DeepSpeed; TensorFlow (2017–2021). Prior production work at 10B+ parameters.</p>
+                </div>
+
+                <div class="systems-item">
+                    <div class="systems-tag">Reward systems</div>
+                    <p>Rule-based verifiers, LLM judges, unit-consistency checks, component-level reward logging — each term logged separately so it's visible which one is actually driving the gradient.</p>
+                </div>
+
+                <div class="systems-item">
+                    <div class="systems-tag">Data pipelines</div>
+                    <p>Multi-stage audit and contamination screening — lexical, embedding, then judge — gating every training corpus; held-out benchmark construction.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-list">
+
+                <div class="experience-item">
+                    <div class="experience-head">
+                        <h3>Adobe Foundry — Staff Applied Scientist</h3>
+                        <span class="experience-years">2026–now</span>
+                    </div>
+                    <p>Own end-to-end post-training for multi-reference image generation on enterprise foundation models: data curation and SFT pipeline to date, now extending to RLVR/RLAIF. Sole owner of post-training for multi-reference product-detail-page image generation from tech packs, for an enterprise customer.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-head">
+                        <h3>Amazon — Senior Applied Scientist, Tech Lead</h3>
+                        <span class="experience-years">2021–2026</span>
+                    </div>
+                    <p>Built Amazon's large-scale multimodal video search stack; applied RL post-training that reduced hallucination by 28%. Led the GenAI Live Action Studio video-generation infrastructure.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-head">
+                        <h3>Google DeepMind — Senior Research Software Engineer</h3>
+                        <span class="experience-years">2017–2021</span>
+                    </div>
+                    <p>Built and maintained a video object detection training and inference system in TensorFlow for the research team, owning training and serving (through MediaPipe). This infrastructure underpinned AI Choreographer (ICCV 2021, with the public AIST++ dataset) and Attention Bottlenecks for Multimodal Fusion (NeurIPS 2021).</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-head">
+                        <h3>UNC-Chapel Hill — PhD, Computer Science</h3>
+                        <span class="experience-years">2012–2017</span>
+                    </div>
+                    <p>Learning physical parameters from video, advised by Prof. Ming C. Lin.</p>
+                </div>
+
+            </div>
+        </section>
+
         <section class="latest">
-            <div class="latest-tag">Latest</div>
+            <div class="latest-tag">Selected Project</div>
             <div class="latest-content">
                 <img src="images/physics_r1_image.png" alt="Physics-R1" class="latest-image">
                 <div class="latest-text">
-                    <h2>Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning</h2>
-                    <p>Multimodal physics benchmarks are contaminated in ways nobody had measured: a three-stage audit — 5-gram Jaccard, then embedding similarity, then an LLM judge — surfaced 134 near-duplicates and 4,846 paraphrase candidates in SciInstruct alone, alongside translation drift and MCQ saturation. Which is why we built ours from scratch. PhysCorp-A is 6,432 records audited down from a 14,294-record pool, with full provenance and license audit; PhysOlym-A is 500 held-out olympiad problems, 99.8% novel-source. The GSPO+DAPO recipe is worth +18.3 points on PhysOlym-A and +15.7 on PhysReason at 8B. Corpus, benchmark, training and reward code all open.</p>
+                    <h2>Physics-R1</h2>
+                    <p>Built the end-to-end RL post-training pipeline for visual reasoning on olympiad problems: a three-stage data audit pipeline that screened 14,294 candidate records for contamination and produced a 6,432-record training corpus (PhysCorp-A) and a 500-problem held-out benchmark (PhysOlym-A); a reward system combining rule-based verifiers, LLM judges, and unit-consistency checks with component-level logging; and a GSPO+DAPO training recipe on verl/FSDP with vLLM rollouts. Three training runs, ~360 H200-GPU-hours, +18.3 on PhysOlym-A and +15.7 on PhysReason at 8B.</p>
                     <div class="links">
                         <a href="https://arxiv.org/abs/2605.14040">arXiv</a>
                         <a href="https://shanyang.me/physics-r1-page/">project page</a>
@@ -53,29 +125,6 @@
                         <a href="https://huggingface.co/datasets/shanyangmie/physolym-a">eval</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- POST-TRAINING SYSTEMS — the "engineer" half of "research engineer". -->
-        <section class="systems">
-            <h2>Post-Training Systems</h2>
-            <div class="systems-grid">
-
-                <div class="systems-item">
-                    <div class="systems-tag">Algorithms</div>
-                    <p>SFT, DPO, RLHF, GRPO, GSPO, DAPO. Physics-R1 settled on GSPO+DAPO at 8B; the multi-turn follow-up runs decoupled advantages over a two-turn episode.</p>
-                </div>
-
-                <div class="systems-item">
-                    <div class="systems-tag">Stack</div>
-                    <p>verl 0.6.1 on FSDP, vLLM for rollout serving, PyTorch and DeepSpeed underneath. Physics-R1 trained in roughly 360 H200-GPU-hours over three seeds; prior production work at 10B+ parameters.</p>
-                </div>
-
-                <div class="systems-item">
-                    <div class="systems-tag">Reward &amp; eval infrastructure</div>
-                    <p>Rule-based verifier on boxed answers, composed with an LLM judge and unit-consistency checks, each component logged separately so it's visible which term is actually driving the gradient. Three-stage contamination audit — lexical, embedding, then judge — gates every training corpus.</p>
-                </div>
-
             </div>
         </section>
 
@@ -95,40 +144,39 @@
             </div>
         </section>
 
-        <section class="experience">
-            <h2>Experience</h2>
-            <div class="experience-list">
+        <section class="releases">
+            <h2>Open Source &amp; Releases</h2>
+            <div class="release-grid">
+                <!-- TODO: add agentic RL training repo (R2 env + training loop) as entry 1 when public -->
 
-                <div class="experience-item">
-                    <div class="experience-head">
-                        <h3>Adobe Foundry — Staff Applied Scientist</h3>
-                        <span class="experience-years">2026–now</span>
-                    </div>
-                    <p>Post-training custom generative foundation models for enterprise customers — supervised fine-tuning, with data curation as the primary lever. Own the evaluation protocols, graders, and preference-data pipelines that gate customer-model quality.</p>
+                <div class="release-item">
+                    <div class="release-tag">Code · GitHub</div>
+                    <a href="https://github.com/shanyang-me/physics-r1-code">physics-r1-code</a>
+                    <p>Training, evaluation, and reward code for Physics-R1.</p>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-head">
-                        <h3>Amazon — Senior Applied Scientist, Tech Lead</h3>
-                        <span class="experience-years">2021–2026</span>
-                    </div>
-                    <p>Built and shipped Amazon's large-scale multimodal video search from the ground up — video, text, image and structured fusion — then applied RL post-training to the search models. Led Schema-of-Thought research on multimodal LLM robustness, cutting hallucination 28%. Later led GenAI Live Action Studio: autoregressive diffusion and training infrastructure for 10B+ parameter video generation.</p>
+                <div class="release-item">
+                    <div class="release-tag">Dataset · Hugging Face</div>
+                    <a href="https://huggingface.co/datasets/shanyangmie/physcorp-a">PhysCorp-A</a>
+                    <p>6,432-record audited training corpus for visual physics reasoning, cut from a 14,294-record pool by a three-stage contamination audit, with full provenance and license audit.</p>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-head">
-                        <h3>Google DeepMind — Senior Research Software Engineer</h3>
-                        <span class="experience-years">2017–2021</span>
-                    </div>
-                    <p>Multimodal modeling. AIST++ / AI Choreographer (ICCV 2021), Attention Bottlenecks for Multimodal Fusion (NeurIPS 2021).</p>
+                <div class="release-item">
+                    <div class="release-tag">Benchmark · Hugging Face</div>
+                    <a href="https://huggingface.co/datasets/shanyangmie/physolym-a">PhysOlym-A</a>
+                    <p>500-question held-out olympiad benchmark for evaluating visual physics reasoning in VLMs, 99.8% novel-source.</p>
                 </div>
 
-                <div class="experience-item">
-                    <div class="experience-head">
-                        <h3>UNC-Chapel Hill — PhD, Computer Science</h3>
-                        <span class="experience-years">2012–2017</span>
-                    </div>
-                    <p>Learning physical parameters from video, with Prof. Ming C. Lin.</p>
+                <div class="release-item">
+                    <div class="release-tag">Code · GitHub</div>
+                    <a href="https://github.com/google/aistplusplus_api">AIST++ Dataset API</a>
+                    <p>Loaders and tooling for the AIST++ 3D dance dataset (from AI Choreographer, ICCV 2021).</p>
+                </div>
+
+                <div class="release-item">
+                    <div class="release-tag">Agentic System</div>
+                    <a href="/lumi/">Lumi Research Manager</a>
+                    <p>Seven specialist agents orchestrated over LangGraph across a staged research pipeline, dispatched in natural language rather than through a fixed DAG. Agents run as Claude CLI subprocesses with MCP tool access, share state through Prisma/SQLite, hold multi-round discussions logged per turn, and sync progress to Notion.</p>
                 </div>
 
             </div>
@@ -136,6 +184,7 @@
 
         <section class="publications">
             <h2>Selected Publications</h2>
+            <p class="section-intro">Research outputs from the systems above.</p>
             <div class="publications-grid">
 
             <article class="publication">
@@ -358,45 +407,8 @@
             </details>
         </section>
 
-        <section class="releases">
-            <h2>Open Source &amp; Releases</h2>
-            <div class="release-grid">
-
-                <div class="release-item">
-                    <div class="release-tag">Dataset · Hugging Face</div>
-                    <a href="https://huggingface.co/datasets/shanyangmie/physcorp-a">PhysCorp-A</a>
-                    <p>6,432-record audited training corpus for visual physics reasoning, cut from a 14,294-record pool by a three-stage contamination audit, with full provenance and license audit.</p>
-                </div>
-
-                <div class="release-item">
-                    <div class="release-tag">Benchmark · Hugging Face</div>
-                    <a href="https://huggingface.co/datasets/shanyangmie/physolym-a">PhysOlym-A</a>
-                    <p>500-question held-out olympiad benchmark for evaluating visual physics reasoning in VLMs, 99.8% novel-source.</p>
-                </div>
-
-                <div class="release-item">
-                    <div class="release-tag">Code · GitHub</div>
-                    <a href="https://github.com/shanyang-me/physics-r1-code">physics-r1-code</a>
-                    <p>Training, evaluation, and reward code for Physics-R1.</p>
-                </div>
-
-                <div class="release-item">
-                    <div class="release-tag">Code · GitHub</div>
-                    <a href="https://github.com/google/aistplusplus_api">AIST++ Dataset API</a>
-                    <p>Loaders and tooling for the AIST++ 3D dance dataset (from AI Choreographer, ICCV 2021).</p>
-                </div>
-
-                <div class="release-item">
-                    <div class="release-tag">Agentic System</div>
-                    <a href="/lumi/">Lumi Research Manager</a>
-                    <p>Seven specialist agents orchestrated over LangGraph across a staged research pipeline, dispatched in natural language rather than through a fixed DAG. Agents run as Claude CLI subprocesses with MCP tool access, share state through Prisma/SQLite, hold multi-round discussions logged per turn, and sync progress to Notion.</p>
-                </div>
-
-            </div>
-        </section>
-
         <footer>
-            <p>&copy; 2026 Shan Yang · Last updated 2026-08-04</p>
+            <p>&copy; 2026 Shan Yang · Last updated 2026-09-17</p>
         </footer>
     </div>
 </body>
