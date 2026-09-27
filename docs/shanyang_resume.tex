@@ -1,5 +1,5 @@
 %-------------------------
-% Resume in LaTeX — OpenAI variant (tailored for Research Engineer / Research Scientist, Post-Training)
+% Resume in LaTeX — canonical, matches shanyang.me (Research Engineer, RL post-training infrastructure)
 % Derived from the canonical docs/shanyang_resume.tex
 %------------------------
 
@@ -90,7 +90,7 @@
 %----------HEADING----------
 \begin{center}
     \textbf{\Huge \scshape Shan Yang} \\ \vspace{4pt}
-    \small Research Engineer / Research Scientist --- RL Post-Training, Reasoning \& Agentic Tool-Use \\
+    \small Research Engineer --- RL Post-Training Infrastructure for Multimodal \& Agentic Models \\
     \vspace{4pt}
     \href{mailto:alexyangshan@gmail.com}{\underline{alexyangshan@gmail.com}} $|$
     \href{https://shanyang.me}{\underline{shanyang.me}} $|$
@@ -102,34 +102,81 @@
 %-----------PROFESSIONAL SUMMARY-----------
 \section{Professional Summary}
   \resumeItemListStart
-    \resumeItem{Research scientist/engineer in \textbf{RL post-training for reasoning and alignment} (RLHF, GRPO/GSPO/DAPO, DPO), with 8+ years shipping foundation models to production at \textbf{product scale} across Adobe, Amazon, and Google DeepMind}
-    \resumeItem{\textbf{Sole-author arXiv 2026} on an RL post-training recipe for reasoning (\textbf{Physics-R1}: GSPO+DAPO, \textbf{+18.3\,pp} on a held-out olympiad benchmark over Qwen3-VL-8B base, with judge-robust reward design and audit-aware curricula); ICML 2026 co-author on test-time reasoning (\textbf{+35.8\%} Math-500, \textbf{+10\%} AIME25)}
-    \resumeItem{Open-source releases at \href{https://huggingface.co/shanyangmie}{huggingface.co/shanyangmie}: \textsc{PhysCorp-A} (6.4K audited multimodal physics corpus) and \textsc{PhysOlym-A} (500-problem held-out olympiad eval, 99.8\% novel-source); prior co-first author at ICCV (AI Choreographer, \textbf{700+} citations) and second author at NeurIPS (Attention Bottlenecks, \textbf{800+} citations)}
+    \resumeItem{\textbf{Ten years building ML systems end-to-end} --- from a production video understanding stack at Google DeepMind to RL post-training pipelines at Amazon and Adobe. I build the training stacks, reward environments, and rollout systems that turn research ideas into trained models}
+    \resumeItem{Most recently built the full \textbf{GSPO+DAPO training stack} (verl on FSDP, vLLM rollouts, rule-based and LLM-judge verifiers) that took Qwen3-VL-8B-Thinking from \textbf{8.0 to 26.3} on a held-out olympiad benchmark in \textbf{$\sim$360 H200-GPU-hours} across three runs (\textbf{Physics-R1}, sole-author arXiv 2026)}
+    \resumeItem{Shipped \textbf{0-to-1 systems at scale}: Amazon's multimodal video search (deployed to customers), a 10B+ parameter video-generation stack for Prime Video, and a TensorFlow video object detection system at DeepMind that underpinned ICCV 2021 (\textbf{700+} citations) and NeurIPS 2021 (\textbf{800+} citations) papers}
   \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
-\section{Technical Skills}
+\section{Technical Stack}
   \resumeSubHeadingListStart
-    \resumeSubItem{\textbf{RL post-training:} GRPO, GSPO, DAPO, DPO, RLHF, verl, MM-Eureka, reward modeling \& shaping, preference-data pipelines, LLM-as-judge \& eval/benchmark design, audit-aware curricula}
-    \resumeSubItem{\textbf{Agentic tool-use:} multi-turn tool-calling RL, in-rollout tool harnesses (stop-token interception, sandboxed execution, \texttt{<tool\_result>} feedback), reward shaping over tool invocation, vLLM serving}
-    \resumeSubItem{\textbf{Multimodal foundation models:} vision-language transformers, autoregressive video / diffusion, test-time training, attention-based fusion}
-    \resumeSubItem{\textbf{Infra:} PyTorch, FSDP / DeepSpeed, vLLM, distributed training at 10B+ params, HuggingFace, Croissant 1.0 + RAI dataset packaging}
+    \resumeSubItem{\textbf{Post-training algorithms:} SFT, DPO, RLHF, GRPO, GSPO, DAPO; Physics-R1 settled on GSPO+DAPO at 8B, the multi-turn follow-up runs decoupled advantages over a two-turn episode}
+    \resumeSubItem{\textbf{Training \& rollout infrastructure:} verl 0.6.1 on FSDP; vLLM for rollout serving; PyTorch, DeepSpeed; TensorFlow (2017--2021); distributed training at 10B+ params}
+    \resumeSubItem{\textbf{Reward systems:} rule-based verifiers, LLM judges, unit-consistency checks, component-level reward logging so it is visible which term is driving the gradient; in-rollout tool harnesses (stop-token interception, sandboxed execution, \texttt{<tool\_result>} feedback)}
+    \resumeSubItem{\textbf{Data pipelines:} multi-stage audit and contamination screening (lexical, embedding, then judge) gating every training corpus; held-out benchmark construction; preference-data pipelines}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Engineering \& Research Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Adobe Foundry}{San Jose, CA}
+      {Staff Applied Scientist}{March 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Own \textbf{end-to-end post-training for multi-reference image generation} on enterprise foundation models: data curation and SFT pipeline to date, now extending to \textbf{RLVR/RLAIF}}
+        \resumeItem{Sole owner of post-training for multi-reference product-detail-page image generation from tech packs for an enterprise customer; own the \textbf{evaluation protocols, graders, and preference-data pipelines} that gate customer-model quality}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
+      {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
+      \resumeItemListStart
+        \resumeItem{\textbf{Search (2021--2025):} Built Amazon's \textbf{large-scale multimodal video search stack} (video / text / image / structured fusion), deployed to customers; applied \textbf{RL post-training} that reduced hallucination by \textbf{28\%}; tech-led VLAP (ECCV 2024) and ICAR (AAAI 2024)}
+        \resumeItem{\textbf{Prime Video (2025--2026):} Led the GenAI Live Action Studio \textbf{video-generation infrastructure} --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} models; controllable generation via test-time training and teacher-diffusion-forcing}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Google DeepMind}{Mountain View, CA}
+      {Senior Research Software Engineer}{June 2017 -- September 2021}
+      \resumeItemListStart
+        \resumeItem{Built and maintained a \textbf{video object detection training and inference system in TensorFlow} for the research team, owning training and serving (through MediaPipe); owned 2D/3D pose reconstruction models deployed on GCP at scale}
+        \resumeItem{This infrastructure underpinned AI Choreographer (ICCV 2021, co-first author, public AIST++ dataset, \textbf{700+} citations) and Attention Bottlenecks for Multimodal Fusion (NeurIPS 2021, second author, \textbf{800+} citations)}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------IN PROGRESS-----------
+\section{In Progress}
+  \resumeSubHeadingListStart
+    \resumeRIP{Physics-R2 --- multi-turn RL}{Denser reward for multimodal reasoning over a two-turn episode, with a sandboxed tool harness invoked mid-rollout and reward shaping over \emph{when and how} the tool is called. Under submission.}
+  \resumeSubHeadingListEnd
+
+%-----------OPEN-SOURCE ARTIFACTS-----------
+\section{Open-source Artifacts}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{physics-r1-code} --- training and evaluation infrastructure: audit pipeline, GSPO+DAPO RL recipe, reward and judge harness \,(\href{https://github.com/shanyang-me/physics-r1-code}{GitHub})}
+    \resumeSubItem{\textbf{\textsc{PhysCorp-A}} --- 6,432-record audited training corpus with contamination screening, cut from a 14,294-record pool \,(\href{https://huggingface.co/datasets/shanyangmie/physcorp-a}{HF})}
+    \resumeSubItem{\textbf{\textsc{PhysOlym-A}} --- 500-problem held-out olympiad benchmark, 99.8\% novel-source, EN/ET bilingual subset \,(\href{https://huggingface.co/datasets/shanyangmie/physolym-a}{HF})}
+    \resumeSubItem{\textbf{AIST++} --- 1{,}408-clip motion-music dataset for 3D dance generation \,(\href{https://github.com/google/aistplusplus_api}{GitHub}, Google / ICCV 2021)}
   \resumeSubHeadingListEnd
 
 %-----------SELECTED PUBLICATIONS-----------
 \section{Selected Publications}
+  \vspace{2pt}{\small\emph{Research outputs from the systems above.}}
+
   \resumeSubHeadingListStart
     \resumePubFull
       {Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning}
       {\textbf{S Yang}}
       {arXiv 2026 \,(\href{https://arxiv.org/abs/2605.14040}{2605.14040}) --- \href{https://shanyang.me/physics-r1-page/}{project} / \href{https://github.com/shanyang-me/physics-r1-code}{code} / \href{https://huggingface.co/shanyangmie}{data}}
-      {Sole-author. Three-stage corpus audit (Jaccard $\to$ mxbai $\to$ Haiku-4.5 judge), $500$-problem novel-source held-out olympiad benchmark, and GSPO+DAPO recipe trained at $\sim$360 H200-GPU-hours over 3 seeds on Qwen3-VL-8B; $+18.3$\,pp on PhysOlym-A, $+15.7$\,pp on PhysReason. Method follow-up in preparation.}
+      {Sole-author. Three-stage contamination audit (14,294 $\to$ 6,432 records), 500-problem held-out benchmark, composite reward system, and GSPO+DAPO recipe on verl/FSDP with vLLM rollouts; $+18.3$\,pp on PhysOlym-A, $+15.7$\,pp on PhysReason at 8B.}
 
     \resumePubFull
       {Beyond Test-Time Training: Learning to Reason via Hardware-Efficient Optimal Control}
       {P Wang, \textbf{S Yang}, X Wang, T Xiao, X Liu, C Yu, Y Lou, P Li, Z Wang, MC Lin, R Vidal}
       {ICML 2026}
-      {Linear recurrent architecture leveraging optimal control theory for LLM test-time reasoning (+35.8\% Math-500, +10\% AIME25).}
+      {Optimal-control formulation of LLM test-time reasoning (+35.8\% Math-500, +10\% AIME25).}
 
     \resumePubBrief
       {VLAP: Efficient Video-Language Alignment via Frame Prompting and Distilling for Video Question Answering}
@@ -160,51 +207,6 @@
       {Modeling Context in Referring Expressions}
       {L Yu, P Poirson, \textbf{S Yang}, A Berg, T Berg}
       {ECCV 2016 --- \textbf{1600+ citations}}
-  \resumeSubHeadingListEnd
-
-%-----------RESEARCH IN PROGRESS-----------
-\section{Research in Progress}
-  \resumeSubHeadingListStart
-    \resumeRIP{Tool-augmented RL post-training (Physics-R1 follow-up)}{Multi-turn \textbf{tool-use RL}: a sandboxed tool harness the policy invokes mid-rollout (vLLM stop-token interception $\to$ sandboxed execution $\to$ \texttt{<tool\_result>} $\to$ resume generation), with reward shaping over \emph{when and how} the tool is called --- the symbolic analogue of the ReTool / ARTIST text tool-RL loops. Extends the GSPO+DAPO recipe with judge-robust correctness signals and audit-aware curricula; in preparation, submission Q3 2026.}
-  \resumeSubHeadingListEnd
-
-%-----------EXPERIENCE-----------
-\section{Engineering \& Research Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Adobe Foundry}{San Jose, CA}
-      {Staff Applied Scientist}{March 2026 -- Present}
-      \resumeItemListStart
-        \resumeItem{Build \textbf{custom generative foundation models for enterprise customers} on Adobe Foundry --- post-training (SFT) where \textbf{training-data quality and curation (``data taste'')} is the primary lever for adapting Firefly base models to each customer's brand, content, and style at \textbf{product quality}}
-        \resumeItem{Own the \textbf{data curation, evaluation protocols, graders, and preference-data pipelines} that gate customer-model quality; turn customer / creator signal and failure cases into clean training data and concrete model-behavior improvements}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Amazon (Prime Video \& Search)}{Palo Alto \& Sunnyvale, CA}
-      {Senior Applied Scientist Tech Lead}{September 2021 -- March 2026}
-      \resumeItemListStart
-        \resumeItem{\textbf{Search (2021--2025):} Built and shipped Amazon's large-scale multimodal video search (video / text / image / structured fusion), deployed to customers, and applied \textbf{RL post-training} to the search models; tech-led VLAP (ECCV 2024, last author) and ICAR (AAAI 2024, last author); led Schema-of-Thought research on multimodal LLM robustness (\textbf{+28\%} hallucination reduction)}
-        \resumeItem{\textbf{Prime Video (2025--2026):} Led GenAI Live Action Studio --- autoregressive diffusion and training infrastructure for \textbf{10B+ parameter} video generation; advanced controllable generation via test-time training and teacher-diffusion-forcing}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Google DeepMind}{Mountain View, CA}
-      {Senior Research Software Engineer}{June 2017 -- September 2021}
-      \resumeItemListStart
-        \resumeItem{Co-first author at ICCV (AI Choreographer + AIST++ dataset, \textbf{700+} citations) and second author at NeurIPS (Attention Bottlenecks, \textbf{800+} citations); drove research agenda on music-conditioned 3D motion synthesis and multimodal generative modeling}
-        \resumeItem{Owned 2D/3D pose reconstruction models deployed on GCP at scale}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
-%-----------OPEN-SOURCE ARTIFACTS-----------
-\section{Open-source Artifacts}
-  \resumeSubHeadingListStart
-    \resumeSubItem{\textbf{\textsc{PhysCorp-A}} --- 6.4K-record three-stage-audited multimodal physics corpus \,(\href{https://huggingface.co/datasets/shanyangmie/physcorp-a}{HF})}
-    \resumeSubItem{\textbf{\textsc{PhysOlym-A}} --- 500-problem held-out olympiad benchmark, 99.8\% novel-source, EN/ET bilingual subset \,(\href{https://huggingface.co/datasets/shanyangmie/physolym-a}{HF})}
-    \resumeSubItem{\textbf{Physics-R1 code} --- audit pipeline + GSPO+DAPO RL recipe + Sonnet-as-judge eval harness \,(\href{https://github.com/shanyang-me/physics-r1-code}{GitHub})}
-    \resumeSubItem{\textbf{AIST++} --- 1{,}408-clip motion-music dataset for 3D dance generation \,(\href{https://github.com/google/aistplusplus_api}{GitHub}, Google / ICCV 2021)}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
