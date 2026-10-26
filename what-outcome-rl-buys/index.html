@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Outcome RL Buys</title>
+<meta name="description" content="What Outcome RL Buys: Finishing, Reliability, Rarely Reach. Twenty released RL reasoning models read against their bases at fixed token budgets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbfaf7; --fg: #1d1d1f; --muted: #5d5d63; --rule: #e3e0d8; --card: #ffffff;
+  --accent: #103258; --finish: #103258; --relia: #f29218; --reach: #009e73; --code-bg: #f2f0ea;
+  --figure-bg: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15161a; --fg: #e9e8e4; --muted: #a3a3aa; --rule: #2c2d33; --card: #1d1e23;
+    --accent: #8fb6e8; --finish: #6f9bd6; --relia: #f6a945; --reach: #3cc79c; --code-bg: #22242a;
+    --figure-bg: #f7f6f2;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15161a; --fg: #e9e8e4; --muted: #a3a3aa; --rule: #2c2d33; --card: #1d1e23;
+  --accent: #8fb6e8; --finish: #6f9bd6; --relia: #f6a945; --reach: #3cc79c; --code-bg: #22242a;
+  --figure-bg: #f7f6f2;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 18px/1.6 "Source Serif 4", Georgia, serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
+.wide { max-width: 1100px; margin-left: auto; margin-right: auto; padding: 0 16px; }
+header { text-align: center; margin-bottom: 36px; }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 0 0 14px; font-weight: 600; letter-spacing: -0.01em; }
+.author { font-family: Inter, system-ui, sans-serif; font-size: 16px; color: var(--muted); margin: 0 0 22px; }
+.author a { color: var(--fg); text-decoration: none; font-weight: 500; }
+.links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-family: Inter, system-ui, sans-serif; }
+.links a, .links span {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px;
+  font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid var(--rule);
+  color: var(--fg); background: var(--card);
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links span { color: var(--muted); cursor: default; }
+h2 {
+  font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); margin: 52px 0 14px; padding-top: 18px; border-top: 1px solid var(--rule);
+}
+p { margin: 0 0 16px; }
+.lede { font-size: 21px; line-height: 1.5; }
+figure { margin: 28px 0; }
+figure img { width: 100%; height: auto; display: block; background: var(--figure-bg); border-radius: 6px; padding: 10px; }
+figcaption { font-size: 15px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll img { min-width: 900px; }
+.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 22px 0; }
+.part { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; border-top: 4px solid var(--c); }
+.part b { font-family: Inter, system-ui, sans-serif; font-size: 15px; display: block; margin-bottom: 4px; }
+.part p { font-size: 16px; margin: 0; line-height: 1.45; }
+ol.findings { padding-left: 22px; margin: 0; }
+ol.findings li { margin-bottom: 14px; }
+table { border-collapse: collapse; width: 100%; font-family: Inter, system-ui, sans-serif; font-size: 15px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+td.num { white-space: nowrap; }
+.ci { color: var(--muted); font-size: 13px; }
+code, pre { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 14px; }
+pre { background: var(--code-bg); padding: 16px; border-radius: 8px; overflow-x: auto; line-height: 1.5; margin: 0 0 16px; }
+.note { font-size: 15px; color: var(--muted); }
+footer { margin-top: 64px; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: var(--muted); text-align: center; }
+footer a { color: var(--muted); }
+a { color: var(--accent); }
+@media (max-width: 520px) { body { font-size: 17px; } .lede { font-size: 19px; } main { padding-top: 32px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>What Outcome RL Buys:<br>Finishing, Reliability, Rarely Reach</h1>
+    <p class="author"><a href="https://shanyang.me">Shan Yang</a> · Independent Researcher</p>
+    <nav class="links">
+      <!-- TODO(arXiv): replace both spans with links once the arXiv id exists -->
+      <span title="arXiv id pending">Paper (arXiv, soon)</span>
+      <span title="PDF pending">PDF</span>
+      <a href="https://github.com/shanyang-me/outcome-rl-buys">Code &amp; data</a>
+      <a href="#bibtex">BibTeX</a>
+    </nav>
+  </header>
+
+  <p class="lede">Outcome RL raises pass@1, and every pass@1 is scored under a token budget. We read 20 released RL models (1.5B to 32B) against the thinking models they started from, at fixed budgets, and split each change in pass@1 into three parts that add up exactly.</p>
+
+  <div class="parts">
+    <div class="part" style="--c: var(--finish)"><b>Finishing</b><p>Answering before the budget runs out.</p></div>
+    <div class="part" style="--c: var(--relia)"><b>Reliability</b><p>Being right once finished.</p></div>
+    <div class="part" style="--c: var(--reach)"><b>Reach</b><p>Solving problems the base answered wrongly in all eight tries, minus the reverse.</p></div>
+  </div>
+
+  <figure>
+    <img src="fig1.png" alt="Bar chart of the mean pass@1 gain over the base, split into finishing, reliability and net reach. At the training cap on physics, recipes whose base finishes less than 90% of the time gain mostly by finishing; where the base finishes at least 90%, the gain is mostly reliability; reach is a thin sliver everywhere. The same holds one budget above the cap and on competition math." width="1045" height="555">
+    <figcaption>Outcome RL's pass@1 gain on physics and competition math, split into finishing, reliability and net reach. Each bar is the mean over the recipes in its group; recipes are grouped by how often their base finishes at the training cap.</figcaption>
+  </figure>
+
+  <h2>Findings</h2>
+  <ol class="findings">
+    <li><strong>Where the base often runs out of budget, most of the change is finishing</strong>: 82% at 4k and 8k tokens. Given more tokens, the base closes most of that gap by itself.</li>
+    <li><strong>Where the base has enough tokens, the gain is reliability.</strong> The RL model is graded right more often, even on problems both models finish.</li>
+    <li><strong>By our definition, RL rarely solves what its base cannot.</strong> Reach adds at most 2.1 percentage points on any of our four physics and math sets. Of 144 physics problems only the RL model solved, 3.5% hold up when resampled or read. In a random sample, nine of ten new RL steps a human confirmed also appear in the base's samples.</li>
+    <li><strong>In a small-scale RL run on an 8B model, the gain on new problems is finishing</strong>, with reliability flat. Supplying each problem's physical setup was not shown to improve on plain RL.</li>
+  </ol>
+
+  <h2>The split at each recipe's own cap</h2>
+  <p>Every recipe also trains under a budget, so we read each one at its own training cap and at the next budget above it. Shares are each part's size over the three parts' total, pooled over the 20 recipes on physics. Brackets are 95% intervals from resampling the seven bases.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Budget</th><th>Finishing</th><th>Reliability</th><th>Reach, net</th></tr></thead>
+    <tbody>
+      <tr><td>At the training cap</td><td class="num">45% <span class="ci">[18, 59]</span></td><td class="num">49% <span class="ci">[38, 70]</span></td><td class="num">5%</td></tr>
+      <tr><td>Next budget above the cap</td><td class="num">28% <span class="ci">[11, 37]</span></td><td class="num">62% <span class="ci">[56, 73]</span></td><td class="num">10%</td></tr>
+    </tbody>
+  </table>
+  </div>
+</main>
+
+<div class="wide">
+  <figure>
+    <div class="scroll"><img src="fig2.png" alt="Per-recipe bars for all 20 recipes on physics, at the training cap and one budget above it, each split into finishing, reliability and reach, with side panels counting the problems only the base or only the RL model solves." width="1880" height="600"></div>
+    <figcaption>Each recipe at its own training cap and the next budget above it, on physics. Rows are sorted by how often the base finishes at the cap, least first. The side panels count problems that only the base (grey) or only the RL model (black) solves.</figcaption>
+  </figure>
+</div>
+
+<main style="padding-top:0">
+  <h2>What is released</h2>
+  <p>The repository holds everything needed to recompute the paper's measurements from row-level data, without a GPU.</p>
+  <table>
+    <tbody>
+      <tr><td><strong>Metrics</strong></td><td>The exact three-part split, the mirror control, cap selection, per-cell problem-clustered intervals, crossed and base-resampled bootstraps, and the frozen answer matcher with the judge protocol that audits its misses.</td></tr>
+      <tr><td><strong>Test sets</strong></td><td>Ids and gold answers for 300 physics problems, 671 harder unfiltered physics problems, 276 competition-math problems (2025 contests, plus AIME and HMMT February 2026) and MATH-500. Problem texts come from their original sources through a builder script that checks every text against its hash.</td></tr>
+      <tr><td><strong>Rows</strong></td><td>One line per sample (problem, sample index, finished, score, length) for every model and budget in the main study. Tighter budgets are derived from one generation per model.</td></tr>
+      <tr><td><strong>Paper tables</strong></td><td>Every table as CSV, the scripts that wrote them, and tests that rebuild the cap split, the per-cell intervals and the pooled shares from the rows.</td></tr>
+    </tbody>
+  </table>
+
+  <pre><code>git clone https://github.com/shanyang-me/outcome-rl-buys
+cd outcome-rl-buys &amp;&amp; pip install -e ".[dev]"
+pytest -m "not slow"              # identities and the paper's numbers from the rows
+python sets/build_sets.py         # rebuild the test sets' texts from their sources</code></pre>
+
+  <h2 id="bibtex">Citation</h2>
+  <!-- TODO(arXiv): add eprint and archivePrefix once the id exists -->
+  <pre><code>@misc{yang2026outcomerl,
+  title  = {What Outcome {RL} Buys: Finishing, Reliability, Rarely Reach},
+  author = {Yang, Shan},
+  year   = {2026}
+}</code></pre>
+
+  <footer><a href="https://shanyang.me">shanyang.me</a></footer>
+</main>
+</body>
+</html>
