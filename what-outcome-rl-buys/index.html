@@ -21,7 +21,8 @@
   <meta name="citation_title" content="What Outcome RL Buys: Finishing, Reliability, Rarely Reach">
   <meta name="citation_author" content="Yang, Shan">
   <meta name="citation_publication_date" content="2026">
-  <!-- TODO(arXiv): add citation_pdf_url once the id exists -->
+  <meta name="citation_arxiv_id" content="2610.34894">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.34894">
   <title>What Outcome RL Buys: Finishing, Reliability, Rarely Reach</title>
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -75,7 +76,6 @@
     .results-table th, .results-table td { text-align: right; }
     .results-table th:first-child, .results-table td:first-child { text-align: left; }
     .results-table .ci { color: #9ca3af; font-size: 0.85em; }
-    .button[disabled] { opacity: 0.55; cursor: default; }
     .wide-figure { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
     .wide-figure .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .wide-figure .scroll img { min-width: 900px; width: 100%; height: auto; display: block; }
@@ -106,18 +106,17 @@
           </div>
           <div class="column has-text-centered" style="margin-top: 1.5rem;">
             <div class="publication-links">
-              <!-- TODO(arXiv): turn both disabled buttons into links once the arXiv id exists -->
               <span class="link-block">
-                <span class="external-link button is-normal is-rounded is-dark" disabled title="arXiv id pending">
+                <a href="https://arxiv.org/abs/2610.34894" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv (soon)</span>
-                </span>
+                  <span>arXiv</span>
+                </a>
               </span>
               <span class="link-block">
-                <span class="external-link button is-normal is-rounded is-dark" disabled title="PDF pending">
+                <a href="https://arxiv.org/pdf/2610.34894" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>PDF</span>
-                </span>
+                </a>
               </span>
               <span class="link-block">
                 <a href="https://github.com/shanyang-me/outcome-rl-buys" target="_blank" class="external-link button is-normal is-rounded is-dark">
@@ -339,11 +338,12 @@ python sets/build_sets.py         # rebuild the harder and competition-math text
 <section class="section" id="bibtex">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <!-- TODO(arXiv): add eprint and archivePrefix once the id exists -->
     <pre style="font-size: 0.9em;"><code>@misc{yang2026outcomerl,
-  title  = {What Outcome {RL} Buys: Finishing, Reliability, Rarely Reach},
-  author = {Yang, Shan},
-  year   = {2026}
+  title         = {What Outcome {RL} Buys: Finishing, Reliability, Rarely Reach},
+  author        = {Yang, Shan},
+  year          = {2026},
+  eprint        = {2610.34894},
+  archivePrefix = {arXiv}
 }</code></pre>
   </div>
 </section>
